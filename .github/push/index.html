@@ -1,0 +1,1016 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ananya Sharma — EPK | Raga Echoes Artists</title>
+
+    <!-- Google Fonts: Syne & Plus Jakarta Sans -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&family=Syne:wght@700;800&display=swap" rel="stylesheet">
+
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <style>
+        body {
+            background-color: #070708;
+            color: #E2E8F0;
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            overflow-x: hidden;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        /* Strict Type Scale System */
+        .type-scale-hero {
+            font-family: 'Syne', sans-serif;
+            font-size: 3.5rem; /* 56px */
+            line-height: 1.05;
+            font-weight: 800;
+        }
+
+        .type-scale-title {
+            font-family: 'Syne', sans-serif;
+            font-size: 1.75rem; /* 28px */
+            line-height: 1.2;
+            font-weight: 700;
+        }
+
+        .type-scale-subheading {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            font-size: 1rem; /* 16px */
+            line-height: 1.5;
+            font-weight: 600;
+        }
+
+        .type-scale-body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            font-size: 0.875rem; /* 14px */
+            line-height: 1.6;
+            font-weight: 400;
+        }
+
+        @media (max-width: 640px) {
+            .type-scale-hero {
+                font-size: 2.25rem; /* 36px */
+            }
+        }
+
+        /* Subtle ambient grid background */
+        .grid-bg {
+            background-size: 32px 32px;
+            background-image: 
+                linear-gradient(to right, rgba(255, 255, 255, 0.02) 1px, transparent 1px),
+                linear-gradient(to bottom, rgba(255, 255, 255, 0.02) 1px, transparent 1px);
+        }
+
+        /* Refined glassmorphism cards */
+        .glass-pill {
+            background: rgba(14, 14, 18, 0.8);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+        }
+
+        .glass-card {
+            background: rgba(20, 20, 26, 0.65);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        .glass-card:hover {
+            background: rgba(26, 26, 34, 0.85);
+            border-color: rgba(255, 255, 255, 0.2);
+            transform: translateY(-2px);
+            box-shadow: 0 20px 40px -15px rgba(0, 0, 0, 0.8);
+        }
+
+        .publication-mark {
+            width: 3.25rem;
+            min-width: 3.25rem;
+            height: 3.25rem;
+            border-radius: .7rem;
+            border: 1px solid rgba(255,255,255,.12);
+            background: rgba(255,255,255,.045);
+            color: #F2C94C;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            line-height: .95;
+            flex-shrink: 0;
+        }
+        .mark-songlines { flex-direction: column; font-family: Georgia,serif; font-size: .75rem; letter-spacing: -.04em; }
+        .mark-songlines strong { font-weight: 700; }
+        .mark-wire { flex-direction: column; font-family: Georgia,serif; }
+        .mark-wire small { font-size: .48rem; letter-spacing: .18em; }
+        .mark-wire strong { font-size: 1.12rem; letter-spacing: -.08em; }
+        .mark-bbc { flex-direction: column; gap: .22rem; }
+        .mark-bbc .bbc-boxes { display: flex; gap: 2px; }
+        .mark-bbc .bbc-boxes b { background: #F2C94C; color: #111; font: 700 .62rem/1 Arial,sans-serif; padding: 3px 2px; }
+        .mark-bbc small { font: 700 .48rem/1 Arial,sans-serif; letter-spacing: .08em; }
+        .credit-context { color: #94A3B8; }
+        .format-badge-slot { height: 24px; margin-bottom: 8px; display: flex; align-items: center; justify-content: flex-start; }
+        .format-badge { display: inline-flex; align-items: center; justify-content: center; min-height: 24px; padding: 4px 12px; border-radius: 9999px; background: #F2C94C; color: #111 !important; font: 700 11px/1.2 'Plus Jakarta Sans', sans-serif; letter-spacing: .08em; text-transform: uppercase; white-space: nowrap; }
+        .header-brand-logo { display: block; width: 95.4px; height: auto; }
+        .header-brand-lockup { display: flex; align-items: center; gap: 14px; flex-shrink: 0; text-decoration: none; }
+        .header-brand-divider { width: 1px; height: 34px; background: rgba(255,255,255,.3); flex-shrink: 0; }
+        .header-brand-copy { display: flex; flex-direction: column; align-items: flex-start; text-align: left; line-height: 1.3; }
+        .header-brand-name { color: #fff; font-size: .86rem; font-weight: 700; white-space: nowrap; }
+        .header-brand-subtitle { color: #F2C94C; font-size: .7rem; font-weight: 600; letter-spacing: .12em; text-transform: uppercase; }
+        @media (max-width: 640px) {
+            .header-brand-logo { width: 76px; }
+            .header-brand-lockup { gap: 9px; }
+            .header-brand-name { font-size: .72rem; }
+            .header-brand-subtitle { font-size: .62rem; }
+        }
+        @media (max-width: 420px) { .header-booking-button { display: none; } }
+        .footer-brand-logo { display: block; width: 122px; height: auto; }
+
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar { width: 6px; }
+        ::-webkit-scrollbar-track { background: #070708; }
+        ::-webkit-scrollbar-thumb { background: rgba(255, 255, 255, 0.15); border-radius: 3px; }
+        ::-webkit-scrollbar-thumb:hover { background: #F2C94C; }
+
+        *:focus-visible {
+            outline: 2px solid #F2C94C;
+            outline-offset: 3px;
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            *, ::before, ::after {
+                animation-duration: 0.01ms !important;
+                animation-iteration-count: 1 !important;
+                transition-duration: 0.01ms !important;
+                scroll-behavior: auto !important;
+            }
+        }
+/* Locally bundled utility styles: keep the page layout independent of CDN scripts. */
+*,*::before,*::after{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0}img{max-width:100%}a{color:inherit}button,input,textarea{font:inherit}
+.relative{position:relative}.absolute{position:absolute}.fixed{position:fixed}.block{display:block}.hidden{display:none}.flex{display:flex}.grid{display:grid}.flex-col{flex-direction:column}.flex-wrap{flex-wrap:wrap}.flex-grow{flex-grow:1}.items-center{align-items:center}.items-start{align-items:flex-start}.items-stretch{align-items:stretch}.justify-between{justify-content:space-between}.justify-center{justify-content:center}.mx-auto{margin-left:auto;margin-right:auto}.ml-auto{margin-left:auto}.ml-1{margin-left:.25rem}.mt-4{margin-top:1rem}.mb-1{margin-bottom:.25rem}.mb-12{margin-bottom:3rem}
+.w-full{width:100%}.w-auto{width:auto}.h-full{height:100%}.min-h-screen{min-height:100vh}.max-w-3xl{max-width:48rem}.max-w-4xl{max-width:56rem}.max-w-5xl{max-width:64rem}.max-w-7xl{max-width:80rem}.max-w-lg{max-width:32rem}.max-w-xl{max-width:36rem}.max-h-\[75vh\]{max-height:75vh}.max-h-\[85vh\]{max-height:85vh}.h-\[500px\]{height:500px}.h-\[600px\]{height:600px}.h-\[650px\]{height:650px}.w-\[600px\]{width:600px}.w-\[650px\]{width:650px}.w-\[700px\]{width:700px}
+.aspect-\[4\/5\]{aspect-ratio:4/5}.aspect-video{aspect-ratio:16/9}.overflow-hidden{overflow:hidden}.pointer-events-none{pointer-events:none}.object-cover{object-fit:cover}.object-contain{object-fit:contain}
+.inset-0{inset:0}.inset-x-4{left:1rem;right:1rem}.top-6{top:1.5rem}.top-24{top:6rem}.top-1\/2{top:50%}.top-1\/3{top:33.333333%}.left-0{left:0}.left-4{left:1rem}.left-1\/2{left:50%}.right-0{right:0}.right-4{right:1rem}.right-6{right:1.5rem}.-top-40{top:-10rem}.-left-20{left:-5rem}.-right-20{right:-5rem}.-bottom-20{bottom:-5rem}.-translate-x-1\/2{transform:translateX(-50%)}.-translate-y-1\/2{transform:translateY(-50%)}
+.grid-cols-1{grid-template-columns:repeat(1,minmax(0,1fr))}.gap-2{gap:.5rem}.gap-3{gap:.75rem}.gap-4{gap:1rem}.gap-6{gap:1.5rem}.gap-8{gap:2rem}.gap-12{gap:3rem}.space-y-2>:not([hidden])~:not([hidden]){margin-top:.5rem}.space-y-3>:not([hidden])~:not([hidden]){margin-top:.75rem}.space-y-4>:not([hidden])~:not([hidden]){margin-top:1rem}.space-y-6>:not([hidden])~:not([hidden]){margin-top:1.5rem}.space-y-8>:not([hidden])~:not([hidden]){margin-top:2rem}
+.p-2{padding:.5rem}.p-3{padding:.75rem}.p-4{padding:1rem}.p-6{padding:1.5rem}.p-8{padding:2rem}.px-4{padding-left:1rem;padding-right:1rem}.px-5{padding-left:1.25rem;padding-right:1.25rem}.px-6{padding-left:1.5rem;padding-right:1.5rem}.px-7{padding-left:1.75rem;padding-right:1.75rem}.py-2{padding-top:.5rem;padding-bottom:.5rem}.py-2\.5{padding-top:.625rem;padding-bottom:.625rem}.py-3{padding-top:.75rem;padding-bottom:.75rem}.py-3\.5{padding-top:.875rem;padding-bottom:.875rem}.py-4{padding-top:1rem;padding-bottom:1rem}.py-10{padding-top:2.5rem;padding-bottom:2.5rem}.py-12{padding-top:3rem;padding-bottom:3rem}.py-20{padding-top:5rem;padding-bottom:5rem}.pt-2{padding-top:.5rem}.pt-4{padding-top:1rem}.pt-20{padding-top:5rem}.pb-3{padding-bottom:.75rem}.pb-4{padding-bottom:1rem}.pl-5{padding-left:1.25rem}
+.rounded-xl{border-radius:.75rem}.rounded-2xl{border-radius:1rem}.rounded-3xl{border-radius:1.5rem}.rounded-full{border-radius:9999px}.border{border:1px solid rgba(255,255,255,.08)}.border-t{border-top:1px solid rgba(255,255,255,.08)}.border-b{border-bottom:1px solid rgba(255,255,255,.08)}.border-l-2{border-left:2px solid}.border-white\/5{border-color:rgba(255,255,255,.05)}.border-white\/10{border-color:rgba(255,255,255,.1)}.border-white\/20{border-color:rgba(255,255,255,.2)}.border-refined-accent\/60{border-color:rgba(242,201,76,.6)}
+.bg-refined-card{background:#14141a}.bg-refined-surface{background:#0e0e12}.bg-refined-surface\/40{background:rgba(14,14,18,.4)}.bg-black{background:#000}.bg-black\/40{background:rgba(0,0,0,.4)}.bg-black\/60{background:rgba(0,0,0,.6)}.bg-black\/90{background:rgba(0,0,0,.9)}.bg-black\/95{background:rgba(0,0,0,.95)}.bg-white{background:#fff}.bg-indigo-950\/20{background:rgba(30,27,75,.2)}.bg-teal-950\/20{background:rgba(4,47,46,.2)}.bg-amber-950\/15{background:rgba(69,26,3,.15)}.bg-gradient-to-b{background-image:linear-gradient(to bottom,var(--tw-gradient-stops))}.from-refined-surface{--tw-gradient-from:#0e0e12;--tw-gradient-stops:var(--tw-gradient-from),var(--tw-gradient-to,rgba(14,14,18,0))}.to-refined-bg{--tw-gradient-to:#070708}.backdrop-blur-md{backdrop-filter:blur(12px)}.backdrop-blur-lg{backdrop-filter:blur(16px)}.blur-\[160px\]{filter:blur(160px)}.blur-\[170px\]{filter:blur(170px)}.blur-\[180px\]{filter:blur(180px)}
+.text-white{color:#fff}.text-black{color:#000}.text-refined-accent{color:#f2c94c}.text-refined-muted{color:#94a3b8}.text-slate-200{color:#e2e8f0}.text-slate-300{color:#cbd5e1}.text-slate-400{color:#94a3b8}.text-white\/70{color:rgba(255,255,255,.7)}.text-xs{font-size:.75rem;line-height:1rem}.text-lg{font-size:1.125rem;line-height:1.75rem}.text-xl{font-size:1.25rem;line-height:1.75rem}.text-3xl{font-size:1.875rem;line-height:2.25rem}.text-center{text-align:center}.font-normal{font-weight:400}.font-medium{font-weight:500}.font-semibold{font-weight:600}.font-bold{font-weight:700}.leading-relaxed{line-height:1.625}.tracking-wider{letter-spacing:.05em}.uppercase{text-transform:uppercase}.underline{text-decoration-line:underline}.underline-offset-4{text-underline-offset:4px}.antialiased{-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale}
+.z-0{z-index:0}.z-10{z-index:10}.z-30{z-index:30}.z-40{z-index:40}.z-50{z-index:50}.shadow-md{box-shadow:0 4px 6px -1px rgba(0,0,0,.1),0 2px 4px -2px rgba(0,0,0,.1)}.shadow-xl{box-shadow:0 20px 25px -5px rgba(0,0,0,.1),0 8px 10px -6px rgba(0,0,0,.1)}.shadow-2xl{box-shadow:0 25px 50px -12px rgba(0,0,0,.25)}.transition-all{transition:all .3s ease}.transition-colors{transition:color,background-color,border-color .2s ease}.transition-transform{transition:transform .7s ease}.duration-700{transition-duration:700ms}.cursor-pointer{cursor:pointer}.group:hover .group-hover\:scale-105{transform:scale(1.05)}
+.hover\:bg-refined-accent:hover{background:#f2c94c}.hover\:border-white\/30:hover{border-color:rgba(255,255,255,.3)}.hover\:text-refined-accent:hover{color:#f2c94c}.hover\:text-white:hover{color:#fff}.hover\:underline:hover{text-decoration:underline}.focus\:border-refined-accent:focus{border-color:#f2c94c}.focus\:outline-none:focus{outline:2px solid transparent;outline-offset:2px}.selection\:bg-refined-accent ::selection{background:#f2c94c}.selection\:text-black ::selection{color:#000}
+@media(min-width:640px){.sm\:flex-row{flex-direction:row}.sm\:grid-cols-2{grid-template-columns:repeat(2,minmax(0,1fr))}.sm\:p-8{padding:2rem}.sm\:p-12{padding:3rem}.sm\:px-6{padding-left:1.5rem;padding-right:1.5rem}}
+@media(min-width:768px){.md\:flex{display:flex}.md\:hidden{display:none}.md\:grid-cols-2{grid-template-columns:repeat(2,minmax(0,1fr))}.md\:py-20{padding-top:5rem;padding-bottom:5rem}}
+@media(min-width:1024px){.lg\:grid-cols-3{grid-template-columns:repeat(3,minmax(0,1fr))}.lg\:grid-cols-12{grid-template-columns:repeat(12,minmax(0,1fr))}.lg\:col-span-4{grid-column:span 4/span 4}.lg\:col-span-5{grid-column:span 5/span 5}.lg\:col-span-7{grid-column:span 7/span 7}.lg\:col-span-8{grid-column:span 8/span 8}.lg\:px-8{padding-left:2rem;padding-right:2rem}}
+@media(max-width:767px){.mobile-link{display:block}}
+.aspect-square{aspect-ratio:1/1}.border-y{border-top:1px solid rgba(255,255,255,.08);border-bottom:1px solid rgba(255,255,255,.08)}.divide-y>:not([hidden])~:not([hidden]){border-top:1px solid rgba(255,255,255,.08)}.divide-white\/10>:not([hidden])~:not([hidden]){border-color:rgba(255,255,255,.1)}.items-end{align-items:flex-end}.justify-end{justify-content:flex-end}.gap-2\.5{gap:.625rem}.h-10{height:2.5rem}.h-12{height:3rem}.w-10{width:2.5rem}.w-12{width:3rem}.p-7{padding:1.75rem}.mt-1{margin-top:.25rem}.mt-2{margin-top:.5rem}.mt-3{margin-top:.75rem}.ml-0\.5{margin-left:.125rem}.text-base{font-size:1rem;line-height:1.5rem}.space-y-2\.5>:not([hidden])~:not([hidden]){margin-top:.625rem}.space-y-5>:not([hidden])~:not([hidden]){margin-top:1.25rem}.opacity-0{opacity:0}.bg-gradient-to-t{background-image:linear-gradient(to top,var(--tw-gradient-stops))}.from-black\/80{--tw-gradient-from:rgba(0,0,0,.8);--tw-gradient-stops:var(--tw-gradient-from),var(--tw-gradient-to,rgba(0,0,0,0))}.via-transparent{--tw-gradient-stops:var(--tw-gradient-from),transparent,var(--tw-gradient-to,rgba(0,0,0,0))}.to-transparent{--tw-gradient-to:transparent}.duration-500{transition-duration:500ms}.transition-opacity{transition:opacity .3s ease}.group:hover .group-hover\:scale-110{transform:scale(1.1)}.group:hover .group-hover\:opacity-100{opacity:1}.group:hover .group-hover\:bg-black\/20{background:rgba(0,0,0,.2)}.group:hover .group-hover\:text-refined-accent{color:#f2c94c}
+@media(min-width:640px){.sm\:items-center{align-items:center}}
+
+.aspect-square{aspect-ratio:1/1}.border-y{border-top:1px solid rgba(255,255,255,.08);border-bottom:1px solid rgba(255,255,255,.08)}.divide-y>:not([hidden])~:not([hidden]){border-top:1px solid rgba(255,255,255,.08)}.divide-white\/10>:not([hidden])~:not([hidden]){border-color:rgba(255,255,255,.1)}.items-end{align-items:flex-end}.justify-end{justify-content:flex-end}.gap-2\.5{gap:.625rem}.h-10{height:2.5rem}.h-12{height:3rem}.w-10{width:2.5rem}.w-12{width:3rem}.p-7{padding:1.75rem}.mt-1{margin-top:.25rem}.mt-2{margin-top:.5rem}.mt-3{margin-top:.75rem}.ml-0\.5{margin-left:.125rem}.text-base{font-size:1rem;line-height:1.5rem}.space-y-2\.5>:not([hidden])~:not([hidden]){margin-top:.625rem}.space-y-5>:not([hidden])~:not([hidden]){margin-top:1.25rem}.opacity-0{opacity:0}.bg-gradient-to-t{background-image:linear-gradient(to top,var(--tw-gradient-stops))}.from-black\/80{--tw-gradient-from:rgba(0,0,0,.8);--tw-gradient-stops:var(--tw-gradient-from),var(--tw-gradient-to,rgba(0,0,0,0))}.via-transparent{--tw-gradient-stops:var(--tw-gradient-from),transparent,var(--tw-gradient-to,rgba(0,0,0,0))}.to-transparent{--tw-gradient-to:transparent}.duration-500{transition-duration:500ms}.transition-opacity{transition:opacity .3s ease}.group:hover .group-hover\:scale-110{transform:scale(1.1)}.group:hover .group-hover\:opacity-100{opacity:1}.group:hover .group-hover\:bg-black\/20{background:rgba(0,0,0,.2)}.group:hover .group-hover\:text-refined-accent{color:#f2c94c}
+@media(min-width:640px){.sm\:items-center{align-items:center}}
+
+.object-top{object-position:top}.video-thumbnail{object-position:center 30%}
+/* Hidden overlays must stay hidden; responsive desktop navigation is explicitly restored. */
+.hidden{display:none!important}
+@media(min-width:768px){.md\:flex{display:flex!important}.md\:hidden{display:none!important}}
+
+        blockquote { margin: 0; }
+        /* Keep links visually clean across browsers, including icon-only links. */
+        a, a:visited, a:hover, a:active { text-decoration: none; }
+    </style>
+</head>
+<body class="relative min-h-screen text-slate-300 antialiased selection:bg-refined-accent selection:text-black grid-bg">
+
+    <!-- Ambient background glows -->
+    <div class="fixed inset-0 pointer-events-none z-0 overflow-hidden">
+        <div class="absolute -top-40 -left-20 w-[600px] h-[600px] rounded-full bg-indigo-950/20 blur-[160px]"></div>
+        <div class="absolute top-1/3 -right-20 w-[650px] h-[650px] rounded-full bg-teal-950/20 blur-[180px]"></div>
+        <div class="absolute -bottom-20 left-1/2 -translate-x-1/2 w-[700px] h-[500px] rounded-full bg-amber-950/15 blur-[170px]"></div>
+    </div>
+
+    <script>
+        window.OFFLINE_MEDIA = {
+            logo: "assets/images/raga-echoes-logo.webp",
+            hero: "assets/images/ananya-sharma-hero.webp",
+            gallery1: "assets/images/studio-sitar-performance.webp",
+            gallery2: "assets/images/blue-stage-sitar-performance.webp",
+            gallery3: "assets/images/studio-interview.webp",
+            gallery4: "assets/images/writing-music-studio.webp",
+            gallery5: "assets/images/red-carpet-interview.webp",
+            gallery6: "assets/images/red-carpet-portrait.webp"
+        };
+        window.ARTIST_DATA = {
+            artist: {
+                name: "ANANYA SHARMA",
+                tagline: "Contemporary Sitar & Electro-Acoustic Spatial Audio",
+                discipline: "Sitarist & Spatial Sound Composer",
+                baseCity: "Vancouver, Canada (Indian Origin)",
+                agency: "Raga Echoes Artists",
+                bookingEmail: "booking@ragaechoes.com",
+                pressEmail: "press@ragaechoes.com",
+                shortBio: "Indian-origin artist merging the microtonal depth of the Imdadkhani gharana sitar with ambient modular synthesis and spatial acoustics.",
+                fullBioParagraph1: "Born in India and now based in Vancouver, Canada, my artistic foundation was built through rigorous traditional training in the Imdadkhani gharana, mastering the vocalistic meend, microtonal inflection, and rhythmic architecture of classical Indian ragas. Over time, my practice expanded toward spatial audio processing, granular synthesizer delays, and modern acoustic environments.",
+                fullBioParagraph2: "In my performances, the sitar acts both as an acoustic instrument and an expressive digital controller. By routing acoustic resonance through custom synthesizer rigs, I create multi-dimensional soundscapes that bridge traditional heritage with modern ambient sound design.",
+                portraitUrl: window.OFFLINE_MEDIA.hero,
+                portraitAlt: "Ananya Sharma performing sitar in moody blue stage light"
+            },
+            socialLinks: [
+                { name: "Spotify", url: "https://open.spotify.com", icon: "fa-brands fa-spotify" },
+                { name: "Apple Music", url: "https://music.apple.com", icon: "fa-brands fa-apple" },
+                { name: "YouTube", url: "https://youtube.com", icon: "fa-brands fa-youtube" },
+                { name: "Instagram", url: "https://instagram.com", icon: "fa-brands fa-instagram" },
+                { name: "Bandcamp", url: "https://bandcamp.com", icon: "fa-brands fa-bandcamp" }
+            ],
+            videos: [
+                {
+                    id: "vid-1",
+                    title: "Raga Bageshri in Spatial Ambient",
+                    venue: "Barbican Centre, London",
+                    youtubeId: "dQw4w9WgXcQ",
+                    caption: "Late-night performance of Raga Bageshri rendered through an 8-channel spatial audio array.",
+                    thumbnail: window.OFFLINE_MEDIA.gallery2
+                },
+                {
+                    id: "vid-2",
+                    title: "Resonance & Voltage Live",
+                    venue: "Magnetic Fields Festival, Rajasthan",
+                    youtubeId: "dQw4w9WgXcQ",
+                    caption: "Sunset stage performance combining traditional teental rhythms with analog modular bass glides.",
+                    thumbnail: window.OFFLINE_MEDIA.hero
+                },
+                {
+                    id: "vid-3",
+                    title: "Dawn & Decay",
+                    venue: "Royal Festival Hall, London",
+                    youtubeId: "dQw4w9WgXcQ",
+                    caption: "Morning raga Bhairavi interpreted through tape delays and bowing acoustic drones.",
+                    thumbnail: window.OFFLINE_MEDIA.gallery4
+                }
+            ],
+            formats: [
+                {
+                    id: "fmt-solo",
+                    name: "Solo Sitar & Spatial Electronics",
+                    duration: "60–90 Minutes",
+                    instruments: "Custom Sitar, Modular Synthesizer Rig, Quadraphonic Audio Processing",
+                    integratedDescription: "An intimate solo performance weaving traditional microtonal sitar improvisations with multi-channel ambient soundscapes.",
+                    features: [
+                        "1 Musician on Stage",
+                        "Quadraphonic / 8-Channel Spatial Audio",
+                        "Custom Light & Visual Cues",
+                        "Suitable for Concert Halls & Planetariums",
+                        "Suitable for Listening Room Formats"
+                    ]
+                },
+                {
+                    id: "fmt-duo",
+                    name: "Duo: Sitar & Classical Cello",
+                    duration: "75 Minutes",
+                    instruments: "Acoustic Sitar, Bowed Cello, Ambient Loop Systems",
+                    integratedDescription: "A delicate acoustic dialogue exploring common harmonic threads between Hindustani raga and European minimalism.",
+                    features: [
+                        "2 Musicians on Stage",
+                        "Acoustic & Electro-Acoustic Flexibility",
+                        "Minimal Stage Footprint",
+                        "Suitable for Auditoriums & Cultural Institutions",
+                        "Suitable for Intimate Listening Settings"
+                    ],
+                    featured: true
+                },
+                {
+                    id: "fmt-ensemble",
+                    name: "Ensemble: Raga Echoes Quintet",
+                    duration: "90 Minutes",
+                    instruments: "Sitar, Tabla, Modular Electronics, Violins, Reactive Visuals",
+                    integratedDescription: "A full-scale audiovisual production combining traditional virtuosity with reactive light projections.",
+                    features: [
+                        "5 Musicians + Visual Operator",
+                        "Full Production Lighting & Projections",
+                        "Complete Technical Rider Provided",
+                        "Suitable for World Music Mainstages",
+                        "Suitable for Festival Amphitheatres"
+                    ]
+                }
+            ],
+            events: [
+                {
+                    id: "evt-1",
+                    title: "Orpheum Theatre Soundscape Series",
+                    date: "Oct 24, 2026",
+                    venue: "Orpheum Theatre",
+                    city: "Vancouver, Canada",
+                    status: "Tickets",
+                    actionUrl: "#contact"
+                },
+                {
+                    id: "evt-2",
+                    title: "Purcell Room Session",
+                    date: "Nov 12, 2026",
+                    venue: "Southbank Centre",
+                    city: "London, UK",
+                    status: "Pre-sale",
+                    actionUrl: "#contact"
+                },
+                {
+                    id: "evt-3",
+                    title: "Spatial Acoustic Series",
+                    date: "Dec 05, 2026",
+                    venue: "BIMHUIS",
+                    city: "Amsterdam, Netherlands",
+                    status: "Live",
+                    actionUrl: "#contact"
+                },
+                {
+                    id: "evt-4",
+                    title: "Utzon Room Concert",
+                    date: "Jan 18, 2027",
+                    venue: "Sydney Opera House",
+                    city: "Sydney, Australia",
+                    status: "Sold Out",
+                    actionUrl: "#contact"
+                }
+            ],
+            creditsAndPress: [
+                {
+                    id: "cred-1",
+                    title: "“A breathtaking bridge between ancestral Indian classical depth and futuristic ambient minimalism.”",
+                    context: "The recognition reflects a sound that carries the nuance of Hindustani raga into a spacious, contemporary listening experience.",
+                    organization: "Songlines Magazine",
+                    place: "London, UK",
+                    year: "2025",
+                    mark: "songlines"
+                },
+                {
+                    id: "cred-2",
+                    title: "“Sharma's sitar speaks with terrifying clarity through waves of analog synthesis.”",
+                    context: "The Wire's note captures the contrast at the heart of the live work: an unmistakably acoustic voice moving through experimental electronics.",
+                    organization: "The Wire",
+                    place: "London, UK",
+                    year: "2025",
+                    mark: "wire"
+                },
+                {
+                    id: "cred-3",
+                    title: "World Music Innovation Award Recipient",
+                    context: "The award recognizes a performance language that connects classical Indian musicianship with immersive, forward-looking sound design.",
+                    organization: "BBC Radio 3",
+                    place: "London, UK",
+                    year: "2025",
+                    mark: "bbc"
+                }
+            ],
+            gallery: [
+                {
+                    id: "gal-1",
+                    url: window.OFFLINE_MEDIA.gallery1,
+                    alt: "Ananya Sharma playing sitar in a warmly lit studio",
+                    caption: "A quiet studio session"
+                },
+                {
+                    id: "gal-2",
+                    url: window.OFFLINE_MEDIA.gallery2,
+                    alt: "Ananya Sharma performing sitar beneath dramatic blue stage lighting",
+                    caption: "In performance"
+                },
+                {
+                    id: "gal-3",
+                    url: window.OFFLINE_MEDIA.gallery3,
+                    alt: "Ananya Sharma speaking into a studio microphone during a podcast interview",
+                    caption: "In conversation"
+                },
+                {
+                    id: "gal-4",
+                    url: window.OFFLINE_MEDIA.gallery4,
+                    alt: "Ananya Sharma writing music at a desk in her studio",
+                    caption: "Composing in the studio"
+                },
+                {
+                    id: "gal-5",
+                    url: window.OFFLINE_MEDIA.gallery5,
+                    alt: "Ananya Sharma speaking with an interviewer on a red carpet",
+                    caption: "Red carpet interview"
+                },
+                {
+                    id: "gal-6",
+                    url: window.OFFLINE_MEDIA.gallery6,
+                    alt: "Ananya Sharma in a black saree at a red carpet event",
+                    caption: "Red carpet portrait",
+                    objectPosition: "object-top"
+                }
+            ]
+        };
+    </script>
+
+    <header class="fixed top-6 left-0 right-0 z-40 px-4 sm:px-6 lg:px-8 flex justify-center">
+        <nav class="glass-pill rounded-full px-6 py-3 flex items-center justify-between gap-8 max-w-7xl w-full shadow-2xl">
+            <a href="#hero" class="header-brand-lockup focus:outline-none" aria-label="Raga Echoes — Ananya Sharma Media Kit">
+                <img src="data:image/gif;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs=" alt="Raga Echoes" class="header-brand-logo brand-logo" width="444" height="189">
+                <span class="header-brand-divider" aria-hidden="true"></span>
+                <span class="header-brand-copy">
+                    <span class="header-brand-name">Ananya Sharma</span>
+                    <span class="header-brand-subtitle">Media Kit</span>
+                </span>
+            </a>
+
+            <div class="hidden md:flex items-center gap-6 type-scale-body text-slate-300 ml-auto">
+                <a href="#story" class="hover:text-white transition-colors">Biography</a>
+                <a href="#videos" class="hover:text-white transition-colors">Videos</a>
+                <a href="#formats" class="hover:text-white transition-colors">Configurations</a>
+                <a href="#dates" class="hover:text-white transition-colors">Live</a>
+                <a href="#press" class="hover:text-white transition-colors">Press</a>
+                <a href="#gallery" class="hover:text-white transition-colors">Gallery</a>
+            </div>
+
+            <div class="flex items-center gap-3">
+                <button onclick="openBookingModal()" class="header-booking-button px-5 py-2 rounded-full bg-white text-black font-semibold type-scale-body hover:bg-refined-accent transition-colors shadow-md">
+                    Contact Booking
+                </button>
+                <button id="mobile-menu-btn" class="md:hidden text-slate-300 p-2 hover:text-white focus:outline-none" aria-label="Toggle Navigation">
+                    <i class="fa-solid fa-bars text-lg"></i>
+                </button>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Mobile Navigation Drawer -->
+    <div id="mobile-menu" class="fixed inset-x-4 top-24 z-30 hidden glass-pill rounded-2xl p-6 flex-col gap-4 type-scale-subheading text-slate-300 md:hidden border border-white/10">
+        <a href="#story" class="mobile-link py-2 border-b border-white/5">Biography</a>
+        <a href="#videos" class="mobile-link py-2 border-b border-white/5">Performance Videos</a>
+        <a href="#formats" class="mobile-link py-2 border-b border-white/5">Live Configurations</a>
+        <a href="#dates" class="mobile-link py-2 border-b border-white/5">Watch Me Live</a>
+        <a href="#press" class="mobile-link py-2 border-b border-white/5">Press & Recognition</a>
+        <a href="#gallery" class="mobile-link py-2 border-b border-white/5">Gallery</a>
+        <a href="#contact" class="mobile-link py-2 text-refined-accent">Contact & Booking</a>
+    </div>
+
+    <main class="relative z-10 pt-20">
+
+        <section id="hero" class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 md:py-20">
+            <div class="grid lg:grid-cols-12 gap-12 items-center">
+                
+                <div class="lg:col-span-7 space-y-8">
+                    <div>
+                        <h1 id="hero-title" class="type-scale-hero text-white uppercase">
+                            ANANYA<br>SHARMA
+                        </h1>
+                        <p id="hero-tagline" class="type-scale-subheading text-slate-400 mt-4">
+                            Sitarist & Electro-Acoustic Spatial Audio Composer • Vancouver, Canada
+                        </p>
+                    </div>
+
+                    <p id="hero-quote" class="type-scale-subheading font-normal text-slate-200 border-l-2 border-refined-accent/60 pl-5 leading-relaxed">
+                        “Merging classical Indian raga architecture with ambient synthesis and spatial audio.”
+                    </p>
+
+                    <!-- Icon-only Social Links -->
+                    <div id="hero-social-pills" class="flex items-center gap-3 pt-2"></div>
+
+                    <!-- Hero Actions -->
+                    <div class="flex flex-wrap items-center gap-4 pt-4">
+                        <button onclick="openBookingModal()" class="px-7 py-3.5 rounded-full bg-white text-black font-bold type-scale-body hover:bg-refined-accent transition-colors shadow-xl">
+                            Inquire For Booking
+                        </button>
+                        <button onclick="downloadMediaKit()" class="px-7 py-3.5 rounded-full glass-card text-white font-semibold type-scale-body hover:border-white/30 transition-all flex items-center gap-2">
+                            <i class="fa-solid fa-file-arrow-down text-refined-accent"></i>
+                            <span>Download Media Kit</span>
+                        </button>
+                    </div>
+                </div>
+
+                <div class="lg:col-span-5">
+                    <div class="glass-card rounded-3xl p-3 border border-white/10 shadow-2xl overflow-hidden group">
+                        <div class="aspect-[4/5] rounded-2xl overflow-hidden bg-black">
+                            <img id="hero-portrait" src="" loading="eager" fetchpriority="high" decoding="async" alt="Ananya Sharma playing sitar" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <section id="story" class="py-20 border-t border-white/10 bg-refined-surface/40">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                
+                <div class="max-w-3xl mb-12">
+                    <h2 class="type-scale-title text-white uppercase">Biography</h2>
+                </div>
+
+                <div class="grid lg:grid-cols-12 gap-12 items-start">
+                    <div class="lg:col-span-8 space-y-6 type-scale-body text-slate-300 leading-relaxed font-normal">
+                        <p id="bio-para-1"></p>
+                        <p id="bio-para-2"></p>
+                    </div>
+
+                    <div class="lg:col-span-4">
+                        <div class="glass-card p-6 rounded-2xl space-y-4">
+                            <div class="border-b border-white/10 pb-3">
+                                <span class="type-scale-body font-bold text-white uppercase tracking-wider">Artist Profile</span>
+                            </div>
+                            <div class="space-y-3 type-scale-body">
+                                <div>
+                                    <span class="text-refined-muted block">Discipline</span>
+                                    <span id="fact-discipline" class="text-white font-medium"></span>
+                                </div>
+                                <div>
+                                    <span class="text-refined-muted block">Origin & Base</span>
+                                    <span id="fact-base" class="text-white font-medium"></span>
+                                </div>
+                                <div>
+                                    <span class="text-refined-muted block">Representation</span>
+                                    <span id="fact-agency" class="text-refined-accent font-semibold"></span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <section id="videos" class="py-20 border-t border-white/10">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                
+                <div class="mb-12">
+                    <h2 class="type-scale-title text-white uppercase">Performance Videos</h2>
+                </div>
+
+                <div id="video-grid" class="grid md:grid-cols-2 lg:grid-cols-3 gap-8"></div>
+
+            </div>
+        </section>
+
+        <section id="formats" class="py-20 border-t border-white/10 bg-refined-surface/40">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                
+                <div class="max-w-3xl mb-12">
+                    <h2 class="type-scale-title text-white uppercase">Live Configurations</h2>
+                </div>
+
+                <div id="formats-grid" class="grid lg:grid-cols-3 gap-8 items-stretch"></div>
+
+            </div>
+        </section>
+
+        <section id="dates" class="py-20 border-t border-white/10">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                
+                <div class="mb-12">
+                    <h2 class="type-scale-title text-white uppercase">Watch Me Live</h2>
+                </div>
+
+                <div id="dates-container" class="glass-card rounded-2xl p-6 sm:p-8 border border-white/10"></div>
+
+            </div>
+        </section>
+
+        <section id="press" class="py-20 border-t border-white/10 bg-refined-surface/40">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                
+                <div class="mb-12">
+                    <h2 class="type-scale-title text-white uppercase">Press & Recognition</h2>
+                </div>
+
+                <div id="credits-grid" class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6"></div>
+
+            </div>
+        </section>
+
+        <section id="gallery" class="py-20 border-t border-white/10">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                
+                <div class="mb-12">
+                    <h2 class="type-scale-title text-white uppercase">Gallery</h2>
+                </div>
+
+                <div id="gallery-grid" class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6"></div>
+
+            </div>
+        </section>
+
+        <section id="contact" class="py-20 border-t border-white/10 bg-gradient-to-b from-refined-surface to-refined-bg">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="glass-card rounded-3xl p-8 sm:p-12 border border-white/10 shadow-2xl">
+                    
+                    <div class="grid lg:grid-cols-12 gap-12 items-center">
+                        <div class="lg:col-span-7 space-y-6">
+                            <h2 class="type-scale-title text-white uppercase">Contact & Booking</h2>
+
+                            <p class="type-scale-body text-slate-300 leading-relaxed">
+                                Raga Echoes Artists represents Ananya Sharma globally for concert hall recitals, festival mainstages, immersive audio installations, and collaborative commissions.
+                            </p>
+
+                            <div class="pt-2 space-y-2 type-scale-body">
+                                <div class="flex items-center gap-3">
+                                    <span class="text-refined-muted">Booking:</span>
+                                    <a id="contact-booking-email" href="" class="text-white hover:text-refined-accent font-semibold underline underline-offset-4 transition-colors"></a>
+                                </div>
+                                <div class="flex items-center gap-3">
+                                    <span class="text-refined-muted">Press:</span>
+                                    <a id="contact-press-email" href="" class="text-white hover:text-refined-accent font-semibold underline underline-offset-4 transition-colors"></a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="lg:col-span-5 flex flex-col gap-4 bg-black/40 p-6 rounded-2xl border border-white/10">
+                            <button onclick="openBookingModal()" class="w-full py-3.5 px-6 rounded-xl bg-white text-black font-bold type-scale-body uppercase tracking-wider text-center hover:bg-refined-accent transition-colors shadow-md">
+                                Inquire For Booking
+                            </button>
+
+                            <button onclick="downloadMediaKit()" class="w-full py-3.5 px-6 rounded-xl glass-card text-white font-semibold type-scale-body uppercase tracking-wider hover:border-white/30 transition-all flex items-center justify-center gap-2">
+                                <i class="fa-solid fa-file-arrow-down text-refined-accent"></i>
+                                <span>Download Press Kit</span>
+                            </button>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="border-t border-white/10 py-10 bg-black">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row items-center justify-between gap-6">
+            <img src="data:image/gif;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs=" alt="Raga Echoes" class="footer-brand-logo brand-logo" width="444" height="189" loading="lazy">
+
+            <p class="type-scale-body text-refined-muted">
+                &copy; <span id="copyright-year"></span> Ananya Sharma. All rights reserved.
+            </p>
+
+            <a href="#hero" class="type-scale-body text-refined-accent hover:underline" aria-label="Back to top">
+                Back to Top <i class="fa-solid fa-arrow-up text-xs ml-1"></i>
+            </a>
+        </div>
+    </footer>
+
+    <!-- Video Modal Player -->
+    <div id="video-modal" class="fixed inset-0 z-50 hidden flex items-center justify-center bg-black/90 backdrop-blur-md p-4" role="dialog" aria-modal="true" aria-labelledby="modal-video-title">
+        <div class="relative w-full max-w-4xl glass-card rounded-2xl overflow-hidden border border-white/20">
+            <div class="flex items-center justify-between px-6 py-4 border-b border-white/10 bg-refined-surface">
+                <h3 id="modal-video-title" class="type-scale-subheading text-white">Video Performance</h3>
+                <button onclick="closeVideoModal()" class="text-refined-muted hover:text-white p-2 text-xl" aria-label="Close Video Player">
+                    <i class="fa-solid fa-xmark"></i>
+                </button>
+            </div>
+            <div class="relative aspect-video bg-black">
+                <div id="video-embed-holder" class="w-full h-full flex items-center justify-center"></div>
+            </div>
+            <div class="p-6 bg-refined-card space-y-2">
+                <p id="modal-video-caption" class="type-scale-body text-slate-300"></p>
+                <p id="modal-video-venue" class="type-scale-body text-refined-muted pt-2 border-t border-white/10"></p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Gallery Lightbox -->
+    <div id="gallery-lightbox" class="fixed inset-0 z-50 hidden flex items-center justify-center bg-black/95 backdrop-blur-lg p-4" role="dialog" aria-modal="true" aria-label="Image Gallery Lightbox">
+        <button id="close-gallery-lightbox" class="absolute top-6 right-6 text-white hover:text-refined-accent text-3xl z-50 p-2" aria-label="Close Lightbox">
+            <i class="fa-solid fa-xmark"></i>
+        </button>
+
+        <button id="prev-gallery-btn" class="absolute left-4 top-1/2 -translate-y-1/2 text-white/70 hover:text-refined-accent text-3xl p-4 z-50" aria-label="Previous Image">
+            <i class="fa-solid fa-chevron-left"></i>
+        </button>
+
+        <button id="next-gallery-btn" class="absolute right-4 top-1/2 -translate-y-1/2 text-white/70 hover:text-refined-accent text-3xl p-4 z-50" aria-label="Next Image">
+            <i class="fa-solid fa-chevron-right"></i>
+        </button>
+
+        <div class="max-w-5xl max-h-[85vh] flex flex-col items-center">
+            <img id="lightbox-img" src="" alt="Gallery Image" class="max-h-[75vh] w-auto object-contain rounded-xl border border-white/10">
+            <div class="mt-4 text-center max-w-xl">
+                <p id="lightbox-caption" class="type-scale-body text-white font-medium"></p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Booking Inquiry Modal -->
+    <div id="booking-modal" class="fixed inset-0 z-50 hidden flex items-center justify-center bg-black/90 backdrop-blur-md p-4" role="dialog" aria-modal="true" aria-labelledby="modal-booking-title">
+        <div class="relative w-full max-w-lg glass-card rounded-2xl p-6 sm:p-8 border border-white/20">
+            <div class="flex items-center justify-between pb-4 border-b border-white/10">
+                <h3 id="modal-booking-title" class="type-scale-subheading text-white uppercase">Booking Inquiry</h3>
+                <button onclick="closeBookingModal()" class="text-refined-muted hover:text-white p-2 text-xl" aria-label="Close Modal">
+                    <i class="fa-solid fa-xmark"></i>
+                </button>
+            </div>
+
+            <form id="booking-form" class="space-y-4 pt-4" onsubmit="handleBookingSubmit(event)">
+                <div>
+                    <label for="inquiry-name" class="block type-scale-body text-refined-muted mb-1">Presenter or Organization</label>
+                    <input type="text" id="inquiry-name" required class="w-full px-4 py-2.5 rounded-xl bg-black/60 border border-white/10 text-white type-scale-body focus:border-refined-accent focus:outline-none">
+                </div>
+                <div>
+                    <label for="inquiry-email" class="block type-scale-body text-refined-muted mb-1">Contact Email</label>
+                    <input type="email" id="inquiry-email" required class="w-full px-4 py-2.5 rounded-xl bg-black/60 border border-white/10 text-white type-scale-body focus:border-refined-accent focus:outline-none">
+                </div>
+                <div>
+                    <label for="inquiry-venue" class="block type-scale-body text-refined-muted mb-1">Venue, City & Event Date</label>
+                    <input type="text" id="inquiry-venue" placeholder="e.g. Orpheum Theatre, Vancouver - Nov 2026" required class="w-full px-4 py-2.5 rounded-xl bg-black/60 border border-white/10 text-white type-scale-body focus:border-refined-accent focus:outline-none">
+                </div>
+                <div>
+                    <label for="inquiry-format" class="block type-scale-body text-refined-muted mb-1">Requested Configuration</label>
+                    <select id="inquiry-format" class="w-full px-4 py-2.5 rounded-xl bg-black/60 border border-white/10 text-white type-scale-body focus:border-refined-accent focus:outline-none">
+                        <option value="Solo Sitar & Spatial Electronics">Solo Sitar & Spatial Electronics</option>
+                        <option value="Duo: Sitar & Classical Cello">Duo: Sitar & Classical Cello</option>
+                        <option value="Ensemble: Raga Echoes Quintet">Ensemble: Raga Echoes Quintet</option>
+                    </select>
+                </div>
+                <div>
+                    <label for="inquiry-msg" class="block type-scale-body text-refined-muted mb-1">Performance Details</label>
+                    <textarea id="inquiry-msg" rows="3" class="w-full px-4 py-2.5 rounded-xl bg-black/60 border border-white/10 text-white type-scale-body focus:border-refined-accent focus:outline-none"></textarea>
+                </div>
+
+                <button type="submit" class="w-full py-3 rounded-xl bg-white text-black font-bold type-scale-body uppercase tracking-wider hover:bg-refined-accent transition-colors">
+                    Send Inquiry Email
+                </button>
+            </form>
+        </div>
+    </div>
+
+    <script>
+        document.querySelectorAll('img.brand-logo').forEach(logo => { logo.src = window.OFFLINE_MEDIA.logo; });
+        (() => {
+            const DATA = window.ARTIST_DATA;
+
+            document.getElementById('copyright-year').textContent = new Date().getFullYear();
+
+            // Hero setup
+            document.getElementById('hero-portrait').src = DATA.artist.portraitUrl;
+            document.getElementById('hero-portrait').alt = DATA.artist.portraitAlt;
+            document.getElementById('hero-quote').textContent = `“${DATA.artist.shortBio}”`;
+
+            // Social icons only
+            const socialContainer = document.getElementById('hero-social-pills');
+            socialContainer.innerHTML = DATA.socialLinks.map(link => `
+                <a href="${link.url}" target="_blank" rel="noopener noreferrer" aria-label="${link.name}"
+                   class="w-10 h-10 rounded-full glass-card flex items-center justify-center text-slate-300 hover:text-refined-accent hover:border-white/30 transition-all">
+                    <i class="${link.icon} text-base"></i>
+                </a>
+            `).join('');
+
+            // Biography setup
+            document.getElementById('bio-para-1').textContent = DATA.artist.fullBioParagraph1;
+            document.getElementById('bio-para-2').textContent = DATA.artist.fullBioParagraph2;
+            document.getElementById('fact-discipline').textContent = DATA.artist.discipline;
+            document.getElementById('fact-base').textContent = DATA.artist.baseCity;
+            document.getElementById('fact-agency').textContent = DATA.artist.agency;
+
+            // Performance Videos setup
+            const videoGrid = document.getElementById('video-grid');
+            videoGrid.innerHTML = DATA.videos.map(vid => `
+                <article class="glass-card rounded-2xl overflow-hidden flex flex-col group border border-white/10">
+                    <div class="relative aspect-video overflow-hidden bg-black">
+                        <img src="${vid.thumbnail}" alt="${vid.title}" loading="lazy" decoding="async" class="w-full h-full object-cover video-thumbnail group-hover:scale-105 transition-transform duration-500">
+                        <div class="absolute inset-0 bg-black/40 group-hover:bg-black/20 transition-colors flex items-center justify-center">
+                            <button onclick="openVideoModal('${vid.id}')" class="w-12 h-12 rounded-full bg-white text-black flex items-center justify-center text-lg shadow-2xl group-hover:scale-110 transition-transform" aria-label="Play ${vid.title}">
+                                <i class="fa-solid fa-play ml-0.5"></i>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="p-6 flex flex-col justify-between flex-grow space-y-3">
+                        <div>
+                            <h3 class="type-scale-subheading text-white group-hover:text-refined-accent transition-colors">${vid.title}</h3>
+                            <p class="type-scale-body text-refined-muted mt-1">${vid.venue}</p>
+                        </div>
+                        <p class="type-scale-body text-slate-300">${vid.caption}</p>
+                    </div>
+                </article>
+            `).join('');
+
+            // Live Configurations (Integrated Description & Suitable For Bullet Points)
+            const formatsGrid = document.getElementById('formats-grid');
+            formatsGrid.innerHTML = DATA.formats.map(fmt => `
+                <div class="glass-card rounded-3xl p-8 border ${fmt.featured ? 'border-refined-accent shadow-2xl' : 'border-white/10'} flex flex-col">
+                    <div class="format-badge-slot">${fmt.featured ? '<span class="format-badge">Most Requested</span>' : ''}</div>
+
+                    <div class="space-y-6">
+                        <div>
+                            <h3 class="type-scale-subheading text-white font-bold text-lg">${fmt.name}</h3>
+                            <p class="type-scale-body text-slate-300 mt-2 leading-relaxed">${fmt.integratedDescription}</p>
+                        </div>
+
+                        <div class="border-y border-white/10 py-4 space-y-2">
+                            <div>
+                                <span class="type-scale-body text-refined-muted block">Approximate Duration</span>
+                                <span class="type-scale-subheading text-white">${fmt.duration}</span>
+                            </div>
+                            <div class="pt-2">
+                                <span class="type-scale-body text-refined-muted block">Instrumentation</span>
+                                <span class="type-scale-body text-slate-200">${fmt.instruments}</span>
+                            </div>
+                        </div>
+
+                        <div class="space-y-2.5 pt-2">
+                            ${fmt.features.map(feat => `
+                                <div class="flex items-start gap-2.5 type-scale-body text-slate-300">
+                                    <i class="fa-solid fa-check text-refined-accent text-xs mt-1"></i>
+                                    <span>${feat}</span>
+                                </div>
+                            `).join('')}
+                        </div>
+                    </div>
+                </div>
+            `).join('');
+
+            // Watch Me Live setup (Right-aligned CTA buttons)
+            const datesContainer = document.getElementById('dates-container');
+            datesContainer.innerHTML = `
+                <div class="divide-y divide-white/10">
+                    ${DATA.events.map(ev => {
+                        let btnClass = "bg-white text-black hover:bg-refined-accent";
+                        if (ev.status === "Live") btnClass = "bg-emerald-500 text-black hover:bg-emerald-400";
+                        if (ev.status === "Pre-sale") btnClass = "bg-amber-400 text-black hover:bg-amber-300";
+                        if (ev.status === "Sold Out") btnClass = "bg-white/10 text-slate-400 cursor-not-allowed";
+
+                        return `
+                            <div class="py-4 flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+                                <div>
+                                    <span class="type-scale-body text-refined-accent font-semibold block">${ev.date}</span>
+                                    <h3 class="type-scale-subheading text-white">${ev.title}</h3>
+                                    <p class="type-scale-body text-refined-muted">${ev.venue}, ${ev.city}</p>
+                                </div>
+                                <div class="flex justify-end">
+                                    <button onclick="${ev.status !== 'Sold Out' ? 'openBookingModal()' : ''}" 
+                                            class="px-6 py-2 rounded-full font-bold type-scale-body transition-colors ${btnClass}">
+                                        ${ev.status}
+                                    </button>
+                                </div>
+                            </div>
+                        `;
+                    }).join('')}
+                </div>
+            `;
+
+            // Press & Recognition (Publication/Org Name & Location on left with Icon)
+            const creditsGrid = document.getElementById('credits-grid');
+            creditsGrid.innerHTML = DATA.creditsAndPress.map(cred => `
+                <article class="glass-card rounded-2xl p-7 border border-white/10 flex flex-col h-full space-y-5">
+                    <div class="flex items-center gap-4">
+                        <div class="publication-mark mark-${cred.mark}" role="img" aria-label="${cred.organization} mark">
+                            ${cred.mark === 'songlines' ? '<span>song</span><strong>lines</strong>' : ''}
+                            ${cred.mark === 'wire' ? '<small>THE</small><strong>WIRE</strong>' : ''}
+                            ${cred.mark === 'bbc' ? '<span class="bbc-boxes"><b>B</b><b>B</b><b>C</b></span><small>RADIO 3</small>' : ''}
+                        </div>
+                        <div>
+                            <p class="type-scale-body text-white font-semibold">${cred.organization}</p>
+                            <p class="type-scale-body text-refined-muted text-xs">${cred.place} • ${cred.year}</p>
+                        </div>
+                    </div>
+
+                    <div class="pt-4 border-t border-white/10 flex-grow">
+                        <blockquote class="type-scale-body text-slate-200 leading-relaxed font-medium">${cred.title}</blockquote>
+                        <p class="credit-context type-scale-body mt-3">${cred.context}</p>
+                    </div>
+                </article>
+            `).join('');
+
+            // Gallery setup
+            let currentGalleryIndex = 0;
+            const galleryGrid = document.getElementById('gallery-grid');
+            galleryGrid.innerHTML = DATA.gallery.map((item, index) => `
+                <div onclick="openLightbox(${index})" class="glass-card rounded-2xl overflow-hidden cursor-pointer group relative aspect-square border border-white/10">
+                    <img src="${item.url}" alt="${item.alt}" loading="lazy" decoding="async" class="w-full h-full object-cover ${item.objectPosition || 'object-center'} group-hover:scale-105 transition-transform duration-500">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity p-4 flex items-end">
+                        <p class="type-scale-body font-medium text-white">${item.caption}</p>
+                    </div>
+                </div>
+            `).join('');
+
+            window.openLightbox = function(index) {
+                currentGalleryIndex = index;
+                const item = DATA.gallery[index];
+                document.getElementById('lightbox-img').src = item.url;
+                document.getElementById('lightbox-img').alt = item.alt;
+                document.getElementById('lightbox-caption').textContent = item.caption;
+                document.getElementById('gallery-lightbox').classList.remove('hidden');
+                document.body.style.overflow = 'hidden';
+            };
+
+            function closeLightbox() {
+                document.getElementById('gallery-lightbox').classList.add('hidden');
+                document.body.style.overflow = 'auto';
+            }
+
+            document.getElementById('close-gallery-lightbox').addEventListener('click', closeLightbox);
+            document.getElementById('prev-gallery-btn').addEventListener('click', () => {
+                currentGalleryIndex = (currentGalleryIndex - 1 + DATA.gallery.length) % DATA.gallery.length;
+                window.openLightbox(currentGalleryIndex);
+            });
+            document.getElementById('next-gallery-btn').addEventListener('click', () => {
+                currentGalleryIndex = (currentGalleryIndex + 1) % DATA.gallery.length;
+                window.openLightbox(currentGalleryIndex);
+            });
+
+            // Contact Emails
+            document.getElementById('contact-booking-email').textContent = DATA.artist.bookingEmail;
+            document.getElementById('contact-booking-email').href = `mailto:${DATA.artist.bookingEmail}?subject=Booking%20Inquiry%20-%20Ananya%20Sharma`;
+            document.getElementById('contact-press-email').textContent = DATA.artist.pressEmail;
+            document.getElementById('contact-press-email').href = `mailto:${DATA.artist.pressEmail}?subject=Press%20Inquiry%20-%20Ananya%20Sharma`;
+
+            // Download Press / Media Kit File Generator
+            window.downloadMediaKit = function() {
+                const kitText = `
+ANANYA SHARMA — MEDIA KIT & PRESS SUMMARY
+==========================================
+Artist Name: ${DATA.artist.name}
+Discipline: ${DATA.artist.discipline}
+Base: ${DATA.artist.baseCity}
+Representation: ${DATA.artist.agency}
+Booking Email: ${DATA.artist.bookingEmail}
+
+BIOGRAPHY:
+${DATA.artist.fullBioParagraph1}
+
+${DATA.artist.fullBioParagraph2}
+
+LIVE CONFIGURATIONS:
+${DATA.formats.map(f => `- ${f.name} (${f.duration}): ${f.integratedDescription}`).join('\n')}
+
+SELECTED PRESS & RECOGNITION:
+${DATA.creditsAndPress.map(c => `- ${c.organization} (${c.place}, ${c.year}): "${c.title}"`).join('\n')}
+`.trim();
+
+                const blob = new Blob([kitText], { type: 'text/plain;charset=utf-8' });
+                const url = URL.createObjectURL(blob);
+                const a = document.createElement('a');
+                a.href = url;
+                a.download = `Ananya_Sharma_Media_Kit.txt`;
+                document.body.appendChild(a);
+                a.click();
+                document.body.removeChild(a);
+                URL.revokeObjectURL(url);
+            };
+
+            // Modal Handlers
+            window.openVideoModal = function(videoId) {
+                const vid = DATA.videos.find(v => v.id === videoId);
+                if (!vid) return;
+
+                document.getElementById('modal-video-title').textContent = vid.title;
+                document.getElementById('modal-video-caption').textContent = vid.caption;
+                document.getElementById('modal-video-venue').textContent = `${vid.venue}`;
+
+                const holder = document.getElementById('video-embed-holder');
+                holder.innerHTML = `<iframe class="w-full h-full" src="https://www.youtube.com/embed/${vid.youtubeId}?autoplay=1" title="${vid.title}" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>`;
+
+                document.getElementById('video-modal').classList.remove('hidden');
+                document.body.style.overflow = 'hidden';
+            };
+
+            window.closeVideoModal = function() {
+                document.getElementById('video-modal').classList.add('hidden');
+                document.getElementById('video-embed-holder').innerHTML = '';
+                document.body.style.overflow = 'auto';
+            };
+
+            window.openBookingModal = function() {
+                document.getElementById('booking-modal').classList.remove('hidden');
+                document.body.style.overflow = 'hidden';
+            };
+
+            window.closeBookingModal = function() {
+                document.getElementById('booking-modal').classList.add('hidden');
+                document.body.style.overflow = 'auto';
+            };
+
+            window.handleBookingSubmit = function(e) {
+                e.preventDefault();
+                const name = document.getElementById('inquiry-name').value;
+                const email = document.getElementById('inquiry-email').value;
+                const venue = document.getElementById('inquiry-venue').value;
+                const format = document.getElementById('inquiry-format').value;
+                const msg = document.getElementById('inquiry-msg').value;
+
+                const mailtoUrl = `mailto:${DATA.artist.bookingEmail}?subject=Booking%20Inquiry:%20${encodeURIComponent(name)}&body=${encodeURIComponent(`Presenter: ${name}\nEmail: ${email}\nVenue/Date: ${venue}\nConfiguration: ${format}\n\nDetails:\n${msg}`)}`;
+                window.location.href = mailtoUrl;
+                window.closeBookingModal();
+            };
+
+            // Keyboard Shortcuts
+            document.addEventListener('keydown', (e) => {
+                if (e.key === 'Escape') {
+                    closeLightbox();
+                    window.closeVideoModal();
+                    window.closeBookingModal();
+                }
+            });
+
+            // Mobile Nav Toggler
+            const mobileBtn = document.getElementById('mobile-menu-btn');
+            const mobileMenu = document.getElementById('mobile-menu');
+            mobileBtn.addEventListener('click', () => {
+                mobileMenu.classList.toggle('hidden');
+                mobileMenu.classList.toggle('flex');
+            });
+            document.querySelectorAll('.mobile-link').forEach(link => {
+                link.addEventListener('click', () => {
+                    mobileMenu.classList.add('hidden');
+                    mobileMenu.classList.remove('flex');
+                });
+            });
+        })();
+    </script>
+</body>
+</html>
