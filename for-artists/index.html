@@ -89,6 +89,13 @@
   <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
 </head>
 <body class="is-page-unlocked">
+  <script>
+    if ('scrollRestoration' in history) history.scrollRestoration = 'manual';
+    const resetToHero = () => window.scrollTo({top: 0, left: 0, behavior: 'auto'});
+    resetToHero();
+    window.addEventListener('load', resetToHero, {once: true});
+    window.addEventListener('pageshow', resetToHero);
+  </script>
   <header>
     <nav class="nav-pill" aria-label="Primary navigation">
       <a class="nav-brand" href="#top" aria-label="Raga Echoes Artist Media Kits home"><img class="nav-logo" src="assets/images/raga-echoes-logo.webp" alt="Raga Echoes"><span class="nav-divider"></span><span class="nav-copy"><span class="nav-label">Artist Media Kits</span></span></a>
