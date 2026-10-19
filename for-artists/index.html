@@ -379,22 +379,41 @@
       let sectionIndex = 0;
       let sectionStep = 0;
       let coolingDown = false;
+      let sectionTransitioning = false;
+      let visibleSectionIndex = 0;
       let complete = false;
       let carouselTimer;
+      let sectionAlignTimer;
       window.__universalScrollMode = true;
       body.classList.add('universal-scroll-stage');
 
       const showSection = index => {
+        sectionTransitioning = index !== visibleSectionIndex;
+        visibleSectionIndex = index;
+        window.clearTimeout(sectionAlignTimer);
         sections.forEach((section, sectionIndexValue) => {
           section.classList.toggle('is-stage-visible', sectionIndexValue === index);
         });
         const activeSection = sections[index];
         if (activeSection) {
-          const headerOffset = 104;
-          const scrollAnchor = index === 2 ? activeSection.querySelector('.features-intro') : activeSection.querySelector('.container') || activeSection;
-          const targetY = Math.max(0, scrollAnchor.getBoundingClientRect().top + window.scrollY - headerOffset);
-          window.scrollTo({top:targetY, left:0, behavior:index === 0 ? 'auto' : 'smooth'});
+          const header = document.querySelector('header');
+          const headerRect = header?.getBoundingClientRect();
+          const headerOffset = headerRect ? Math.ceil(headerRect.bottom + 16) : 112;
+          const scrollAnchor = index === 2
+            ? activeSection.querySelector('.features-intro h2') || activeSection.querySelector('.features-intro')
+            : activeSection.querySelector('.container') || activeSection;
+          const targetY = Math.max(0, Math.round(scrollAnchor.getBoundingClientRect().top + window.scrollY - headerOffset));
+          const alignSection = () => {
+            if (complete || sectionIndex !== index) return;
+            window.scrollTo({top:targetY, left:0, behavior:'auto'});
+          };
+          window.scrollTo({top:targetY, left:0, behavior:index === 0 || index === 2 ? 'auto' : 'smooth'});
+          if (index === 2) {
+            requestAnimationFrame(alignSection);
+            sectionAlignTimer = window.setTimeout(alignSection, 420);
+          }
         }
+        window.setTimeout(() => { sectionTransitioning = false; }, 900);
         if (window.gsap && activeSection) {
           const activeContent = activeSection.querySelector('.container');
           if (activeContent) window.gsap.fromTo(activeContent, {autoAlpha:.55, y:24}, {autoAlpha:1, y:0, duration:.7, ease:'power3.out', overwrite:true});
@@ -438,7 +457,7 @@
         document.querySelector('#get-started')?.scrollIntoView({behavior:'smooth', block:'start'});
       };
       const advance = direction => {
-        if (complete || coolingDown) return;
+        if (complete || coolingDown || sectionTransitioning) return;
         coolingDown = true;
         window.setTimeout(() => { coolingDown = false; }, 400);
 
