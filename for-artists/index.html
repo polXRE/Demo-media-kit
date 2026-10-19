@@ -93,8 +93,11 @@
     if ('scrollRestoration' in history) history.scrollRestoration = 'manual';
     const resetToHero = () => window.scrollTo({top: 0, left: 0, behavior: 'auto'});
     resetToHero();
+    document.addEventListener('DOMContentLoaded', resetToHero, {once: true});
     window.addEventListener('load', resetToHero, {once: true});
     window.addEventListener('pageshow', resetToHero);
+    window.setTimeout(resetToHero, 100);
+    window.setTimeout(resetToHero, 600);
   </script>
   <header>
     <nav class="nav-pill" aria-label="Primary navigation">
