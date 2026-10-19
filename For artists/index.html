@@ -1,0 +1,511 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Raga Echoes Artist Media Kits — digital portfolios for presenting artists professionally.">
+  <title>Raga Echoes | Artist Media Kits</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700&family=Syne:wght@700;800&display=swap" rel="stylesheet">
+  <style>
+    :root{--bg:#070708;--surface:#0e0e12;--card:#14141a;--text:#e2e8f0;--strong:#fff;--muted:#94a3b8;--accent:#f2c94c;--border:rgba(255,255,255,.08);--border-strong:rgba(255,255,255,.2);--s4:16px;--s6:24px;--s8:32px;--s12:48px;--s20:80px}
+    *{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;overflow-x:hidden;background:var(--bg);color:var(--text);font:14px/1.6 'Plus Jakarta Sans',sans-serif}body:before{content:"";position:fixed;inset:0;z-index:-1;background:radial-gradient(circle at 20% 30%,rgba(75,0,130,.06),transparent 50%),radial-gradient(circle at 80% 20%,rgba(0,128,128,.06),transparent 50%),radial-gradient(circle at 50% 80%,rgba(255,191,0,.035),transparent 50%)}
+    h1,h2,h3{margin:0;color:var(--strong)}h1,h2{font-family:Syne,sans-serif;text-transform:uppercase}h1{font-size:clamp(36px,5vw,56px);line-height:1.05;margin-bottom:var(--s4)}h2{font-size:28px;line-height:1.2;margin-bottom:var(--s6)}h3{font-size:16px;line-height:1.5;margin-bottom:8px}p{margin:0 0 var(--s4)}a{color:inherit}button,a{font:inherit}
+    .container{width:min(1280px,100% - 32px);margin:auto}.container-narrow{max-width:800px;margin:auto}section{padding:var(--s20) 0;border-bottom:1px solid var(--border)}.surface{background:transparent}.muted{color:var(--muted)}
+    header{position:fixed;top:24px;left:50%;z-index:10;width:min(1280px,calc(100% - 48px));transform:translateX(-50%)}.nav-pill{display:flex;align-items:center;justify-content:space-between;gap:24px;padding:12px 24px;border:1px solid var(--border);border-radius:999px;background:rgba(14,14,18,.8);backdrop-filter:blur(16px)}.nav-brand{display:flex;align-items:center;gap:14px;color:var(--strong);font-weight:700;text-decoration:none}.nav-logo{display:block;width:95px;height:auto}.nav-divider{width:1px;height:34px;background:var(--border-strong)}.nav-copy{display:flex;flex-direction:column;align-items:flex-start;line-height:1.3}.nav-name{color:var(--strong);font-size:12px;font-weight:700;white-space:nowrap}.nav-label{color:var(--accent);font-size:10px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;white-space:nowrap}
+    .btn{display:inline-flex;align-items:center;justify-content:center;border:0;border-radius:999px;padding:12px 24px;background:var(--strong);color:var(--bg);font-size:12px;font-weight:700;letter-spacing:.05em;text-decoration:none;text-transform:uppercase;transition:all 300ms cubic-bezier(.16,1,.3,1)}.btn:hover{background:var(--accent)}.btn:focus-visible{outline:2px solid var(--accent);outline-offset:3px}
+    .hero{padding-top:180px}.hero-layout{display:grid;grid-template-columns:minmax(0,1fr) minmax(420px,520px);gap:8vw;align-items:center;min-height:520px}.hero-copy{text-align:left}.hero-copy p{max-width:560px;margin:0 0 var(--s8)}.badge{display:inline-block;margin-bottom:var(--s4);padding:4px 8px;border-radius:4px;background:var(--accent);color:var(--bg);font-size:11px;font-weight:700;letter-spacing:.05em;text-transform:uppercase}
+    .card-stack{position:relative;width:calc(100% + 120px);height:520px;margin-right:-120px;overflow:hidden;touch-action:pan-y;user-select:none}.stack-card{position:absolute;top:50%;left:50%;width:clamp(170px,19vw,230px);aspect-ratio:3/4;overflow:hidden;border:8px solid #1b1b21;border-radius:18px;background:var(--card);box-shadow:0 20px 48px rgba(0,0,0,.5);opacity:0;pointer-events:none;transform:translateX(360px) translateY(-50%) scale(.55);transition:transform 1200ms cubic-bezier(.16,1,.3,1),opacity 1200ms ease,filter 1200ms ease;will-change:transform}.stack-card img{display:block;width:100%;height:100%;object-fit:cover}.stack-card[data-slot="hidden"]{z-index:0;opacity:0;filter:blur(6px) saturate(.5);transform:translateX(360px) translateY(-50%) scale(.55)}.stack-card[data-slot="center"]{z-index:3;opacity:1;filter:none;transform:translateX(-50%) translateY(-50%) scale(1);pointer-events:auto}.stack-card[data-slot="left"]{z-index:2;opacity:.46;filter:blur(4px) saturate(.72);transform:translateX(calc(-50% - 104px)) translateY(-50%) skewX(-3deg) scale(.76)}.stack-card[data-slot="right"]{z-index:2;opacity:.46;filter:blur(4px) saturate(.72);transform:translateX(calc(-50% + 104px)) translateY(-50%) skewX(3deg) scale(.76)}
+    .feature-layout{display:grid;grid-template-columns:minmax(0,1fr) minmax(360px,1fr);gap:var(--s8);align-items:stretch}.feature-list{display:flex;flex-direction:column;gap:8px}.feature-item{position:relative;display:grid;grid-template-columns:40px 1fr;gap:16px;width:100%;padding:16px;text-align:left;border:1px solid transparent;border-radius:12px;background:transparent;color:var(--muted);cursor:pointer;transition:all 300ms cubic-bezier(.16,1,.3,1)}.feature-item:hover{background:rgba(20,20,26,.55);color:var(--text)}.feature-item.is-active{border-color:var(--border);background:rgba(20,20,26,.65);color:var(--text)}.feature-item .feature-number{display:grid;place-items:center;width:32px;height:32px;border-radius:8px;background:rgba(242,201,76,.12);color:var(--accent);font-size:11px;font-style:normal}.feature-item strong{display:block;margin-bottom:4px;color:var(--strong);font-size:16px}.feature-item small{display:block;max-width:480px;overflow:hidden;line-height:1.55;max-height:0;opacity:0;transition:max-height 500ms ease,opacity 300ms ease}.feature-item.is-active small{max-height:100px;opacity:1}.feature-item i{position:absolute;right:16px;bottom:0;left:64px;height:2px;overflow:hidden;background:var(--border)}.feature-item i:after{content:"";display:block;width:var(--progress,0%);height:100%;background:var(--accent);transition:width 100ms linear}.feature-visual{position:relative;min-height:500px;overflow:hidden;border-radius:16px;background:transparent}.feature-image{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0;transform:scale(.72);transition:transform 500ms cubic-bezier(.16,1,.3,1),opacity 400ms ease}.feature-image.is-active{opacity:1;transform:scale(1)}
+    .artist-showcase{min-height:100svh;padding:120px 0 80px;border-bottom:1px solid var(--border);background:var(--surface)}.artist-showcase-inner{display:grid;grid-template-columns:minmax(260px,.8fr) minmax(420px,1.2fr);gap:8vw;align-items:center;min-height:calc(100svh - 200px)}.artist-showcase-copy{display:flex;flex-direction:column;align-items:flex-start}.artist-current-name{min-height:1.2em;font:700 clamp(38px,5vw,72px)/1.05 Syne,sans-serif;letter-spacing:-.05em;color:var(--strong);transition:opacity 400ms ease,transform 500ms cubic-bezier(.16,1,.3,1)}.artist-showcase-counter{margin-top:24px;color:var(--muted);font-size:13px;font-weight:600}.artist-controls{display:flex;gap:10px;margin-top:32px}.artist-arrow{display:grid;place-items:center;width:44px;height:44px;border:1px solid var(--border);border-radius:50%;background:var(--card);color:var(--strong);cursor:pointer;transition:transform 250ms ease,background 250ms ease,border-color 250ms ease}.artist-arrow:hover{transform:scale(1.08);border-color:var(--accent);background:var(--accent);color:var(--bg)}.artist-reel{position:relative;height:600px;overflow:hidden;border-radius:24px;background:rgba(20,20,26,.45)}.artist-slide{position:absolute;top:50%;left:50%;width:min(320px,58%);aspect-ratio:3/4;overflow:hidden;border:8px solid #1b1b21;border-radius:20px;box-shadow:0 24px 60px rgba(0,0,0,.5);transition:transform 800ms cubic-bezier(.16,1,.3,1),opacity 800ms ease,filter 800ms ease;will-change:transform}.artist-slide img{width:100%;height:100%;display:block;object-fit:cover}.artist-slide[data-position="active"]{z-index:3;opacity:1;filter:none;transform:translate(-50%,-50%) scale(1)}.artist-slide[data-position="previous"]{z-index:2;opacity:.42;filter:blur(5px) saturate(.65);transform:translate(-50%,-132%) scale(.78)}.artist-slide[data-position="next"]{z-index:2;opacity:.42;filter:blur(5px) saturate(.65);transform:translate(-50%,32%) scale(.78)}.artist-slide[data-position="hidden"]{z-index:0;opacity:0;filter:blur(8px);transform:translate(-50%,100%) scale(.62)}
+    .why-intro{margin-bottom:var(--s12)}.why-layout{display:grid;grid-template-columns:minmax(0,1fr) minmax(320px,520px);gap:var(--s8);align-items:stretch}.why-steps{display:flex;flex-direction:column;gap:12px}.why-step{position:relative;width:100%;padding:20px 24px;border:1px solid transparent;border-radius:16px;background:transparent;color:var(--text);text-align:left;cursor:pointer;transition:all 300ms cubic-bezier(.16,1,.3,1)}.why-step:hover{border-color:var(--border);background:rgba(20,20,26,.45)}.why-step.is-open{border-color:var(--border);background:rgba(20,20,26,.65);box-shadow:0 12px 36px rgba(0,0,0,.16)}.why-number{display:inline-grid;place-items:center;width:32px;height:32px;margin-right:12px;border-radius:8px;background:rgba(242,201,76,.14);color:var(--accent);font-size:11px;font-weight:700;vertical-align:middle}.why-step-title{display:inline;font-size:16px;font-weight:600;color:var(--strong);vertical-align:middle}.why-content{display:block;max-height:0;overflow:hidden;color:var(--muted);font-size:14px;line-height:1.6;opacity:0;transition:max-height 500ms ease,opacity 300ms ease,margin-top 300ms ease}.why-step.is-open .why-content{max-height:140px;margin-top:16px;opacity:1}.why-progress{display:block;height:3px;margin-top:16px;overflow:hidden;border-radius:999px;background:rgba(255,255,255,.08)}.why-progress i{display:block;width:0;height:100%;background:var(--accent)}.why-step.is-open .why-progress i{width:100%;transition:width 10000ms linear}.why-visual{position:relative;min-height:500px;overflow:hidden;border:1px solid var(--border);border-radius:24px;background:var(--card)}.why-image{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0;transform:scale(.96);transition:opacity 500ms ease,transform 700ms cubic-bezier(.16,1,.3,1),filter 500ms ease;filter:saturate(.7)}.why-image.is-active{opacity:1;transform:scale(1);filter:none}
+    .why-copy-list{margin:0;padding:0;display:grid;gap:24px}.why-copy-list h3{margin:0 0 6px;color:var(--strong);font-size:16px}.why-copy-list p{margin:0;color:var(--text)}
+    .features-intro{max-width:none;margin:0 0 var(--s8);text-align:left}.features-intro h2{margin-bottom:0}.feature-visual{height:auto;min-height:100%;align-self:stretch}.feature-visual .feature-image{object-position:center 24%}
+    .feature-list{gap:4px}.feature-item{grid-template-columns:40px minmax(0,1fr) 28px;opacity:.48;transform:translateX(0) scale(1);transition:opacity 300ms ease,transform 300ms cubic-bezier(.16,1,.3,1),background 300ms ease,border-color 300ms ease}.feature-item:hover{opacity:1;transform:translateX(4px) scale(1.02);border-color:var(--border);background:rgba(20,20,26,.7)}.feature-item small{max-height:0;margin-top:0;opacity:0;transition:max-height 500ms ease,opacity 300ms ease,margin-top 300ms ease}.feature-item:hover small{max-height:100px;margin-top:8px;opacity:1}.feature-item i{display:none}.feature-chevron{align-self:center;color:var(--accent);font-size:20px;opacity:0;transform:translateX(-6px);transition:opacity 250ms ease,transform 250ms ease}.feature-item:hover .feature-chevron{opacity:1;transform:translateX(0)}.features-note{max-width:760px;margin:var(--s8) 0 0;color:var(--muted);font-size:13px}
+    .feature-list{height:520px;display:flex;flex-direction:column;gap:4px}.feature-item{flex:1;min-height:0;overflow:hidden}.feature-item:hover,.feature-item.is-active,.feature-item.is-auto-active{flex:1.8;opacity:1;transform:translateX(4px) scale(1.01);border-color:var(--border);background:rgba(20,20,26,.7)}.feature-item.is-active small,.feature-item.is-auto-active small{max-height:100px;margin-top:8px;opacity:1}.feature-list:has(.feature-item:hover) .feature-item:not(:hover){flex:.84;opacity:.32;transform:scale(.94)}.feature-item.is-active:not(:hover),.feature-item.is-auto-active:not(:hover){flex:1.8;opacity:1;transform:none}.feature-list:has(.feature-item:hover) .feature-item.is-active:not(:hover),.feature-list:has(.feature-item:hover) .feature-item.is-auto-active:not(:hover){flex:.84;opacity:.32;transform:scale(.94)}.feature-chevron svg{display:block;width:22px;height:22px}.feature-item:hover .feature-chevron,.feature-item.is-active .feature-chevron,.feature-item.is-auto-active .feature-chevron{opacity:1;transform:translateX(0)}
+    .iphone-mockup{position:relative;width:min(300px,78%);height:calc(100% - 10px);max-height:540px;margin:auto;padding:10px;border:2px solid #34343d;border-radius:42px;background:#080808;box-shadow:0 28px 70px rgba(0,0,0,.6),inset 0 0 0 1px rgba(255,255,255,.08)}.iphone-mockup:before{content:"";position:absolute;top:8px;left:50%;z-index:2;width:92px;height:21px;border-radius:999px;background:#050505;transform:translateX(-50%);box-shadow:inset 0 1px 2px rgba(255,255,255,.08)}.iphone-mockup:after{content:"";position:absolute;bottom:8px;left:50%;z-index:2;width:78px;height:4px;border-radius:999px;background:rgba(255,255,255,.65);transform:translateX(-50%)}.feature-preview-frame{position:absolute;inset:10px;overflow:hidden;border-radius:32px;background:#070708}.feature-preview-frame iframe{display:block;width:100%;height:100%;border:0;pointer-events:none;background:#070708}
+    .features-note{opacity:1;visibility:visible;transform:none}
+    .cta-layout{display:grid;grid-template-columns:minmax(0,1fr) minmax(320px,1fr);gap:var(--s8);align-items:start}.cta-copy{max-width:650px}.cta-copy p{max-width:650px;margin-left:0;margin-right:0}.cta-copy strong{display:block;margin-bottom:var(--s4);color:var(--strong)}.cta-panel h2{margin-bottom:0}.cta-action{margin-top:var(--s6)}
+    @media(max-width:800px){.cta-layout{grid-template-columns:1fr;gap:var(--s6)}}
+    .why-copy-list>div.is-stage-active h3{color:var(--accent);transition:color 350ms ease}
+    body.universal-scroll-stage{overflow:auto}
+    body.universal-scroll-stage main{position:relative;height:auto;overflow:visible}
+    body.universal-scroll-stage main>section{position:relative;inset:auto;width:100%;display:flex;align-items:center;min-height:100svh;overflow:hidden;scroll-margin-top:24px}
+    body.universal-scroll-stage main>section.is-stage-visible{opacity:1;visibility:visible;transform:none;animation:none}
+    .feature-list:has(.feature-item:hover) .feature-item{flex:.84!important;opacity:.32!important;transform:scale(.94)!important}
+    .feature-list:has(.feature-item:hover) .feature-item:hover{flex:1.8!important;opacity:1!important;transform:translateX(4px) scale(1.01)!important}
+    #features .feature-item{pointer-events:none;cursor:default}
+    body:not(.universal-scroll-stage) #features .feature-item{pointer-events:auto;cursor:pointer}
+    @media(max-width:900px){body.universal-scroll-stage main>section.is-stage-visible{padding-top:120px}}
+    .feature-visual{background:transparent!important}
+    .iphone-mockup{width:min(264px,70%)}
+    .two-col{display:grid;grid-template-columns:1fr 1fr;gap:var(--s8);align-items:start}.glass-panel,.card{border:1px solid var(--border);background:rgba(20,20,26,.65);backdrop-filter:blur(12px)}.glass-panel{padding:var(--s8);border-radius:24px}.card{padding:var(--s6);border-radius:16px;transition:all 300ms cubic-bezier(.16,1,.3,1)}.card:hover{transform:translateY(-2px);border-color:var(--border-strong);box-shadow:0 12px 40px rgba(0,0,0,.4)}.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:var(--s6)}.center{text-align:center}.features-intro{max-width:none;margin:0 0 var(--s8);text-align:left}.features-intro p:last-child{font-weight:600;color:var(--strong)}.cta-panel{padding:0;text-align:left}.cta-panel p{max-width:650px;margin-left:0;margin-right:0}.footer{padding:40px 0;border-top:1px solid var(--border);background:#000}.footer-row{display:flex;align-items:center;justify-content:space-between;gap:24px}.footer-brand-logo{display:block;width:122px;height:auto}.footer p,.footer a{margin:0;font-size:12px;letter-spacing:.05em;text-transform:uppercase}.footer p{color:var(--muted)}.footer a{color:var(--accent);text-decoration:none}.footer a:hover{text-decoration:underline}@media(max-width:640px){.footer-row{flex-direction:column;gap:18px;text-align:center}}
+    *:focus-visible{outline:2px solid var(--accent);outline-offset:3px}@media(max-width:800px){header{top:12px;width:calc(100% - 24px)}.nav-pill{padding:10px 12px}.nav-logo{width:76px}.nav-brand{gap:9px}.nav-name{font-size:10px}.nav-label{font-size:8px}.nav-divider{height:28px}.two-col,.why-layout{grid-template-columns:1fr}.grid{grid-template-columns:1fr}.hero{padding-top:140px}.hero-layout{grid-template-columns:1fr;gap:32px;min-height:0}.hero-copy{text-align:left}.card-stack{width:100%;height:420px;margin:0 auto}.stack-card{width:170px}.stack-card[data-slot="left"]{transform:translateX(calc(-50% - 82px)) translateY(-50%) skewX(-3deg) scale(.72)}.stack-card[data-slot="right"]{transform:translateX(calc(-50% + 82px)) translateY(-50%) skewX(3deg) scale(.72)}.why-visual{min-height:360px;order:-1}.feature-layout{grid-template-columns:1fr}.feature-visual{min-height:360px;order:-1}.feature-item small{font-size:13px}.glass-panel{padding:var(--s6)}}@media(max-width:420px){.header-action{display:none}.nav-copy{display:none}.nav-divider{display:none}.card-stack{height:340px}.stack-card{width:140px;border-width:6px;border-radius:14px}.stack-card[data-slot="left"]{transform:translateX(calc(-50% - 72px)) translateY(-50%) skewX(-3deg) scale(.7)}.stack-card[data-slot="right"]{transform:translateX(calc(-50% + 72px)) translateY(-50%) skewX(3deg) scale(.7)}}@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*:before,*:after{animation:none!important;transition:none!important}}
+    @media(max-width:800px){.artist-showcase{padding:80px 0}.artist-showcase-inner{grid-template-columns:1fr;gap:36px;min-height:0}.artist-reel{height:460px}.artist-slide{width:220px}}
+    @media(max-width:420px){.artist-reel{height:400px}.artist-slide{width:190px}}
+    /* Slider Verticalix-inspired presentation */
+    .artist-showcase{margin:16px;min-height:calc(100svh - 32px);padding:32px 0;border:0;border-radius:30px;background:var(--artist-bg,#cfff2e);color:var(--artist-ink,#111);overflow:hidden;transition:background-color 700ms ease}.artist-showcase-inner{width:min(1280px,calc(100% - 96px));min-height:calc(100svh - 96px);grid-template-columns:minmax(380px,.85fr) minmax(560px,1.15fr);gap:5vw}.artist-current-name{font-size:clamp(82px,10vw,160px);line-height:.82;letter-spacing:-.09em;color:var(--artist-ink,#111);white-space:nowrap}.artist-showcase-counter{color:color-mix(in srgb,var(--artist-ink,#111) 62%,transparent);font-size:20px}.artist-arrow{border-color:color-mix(in srgb,var(--artist-ink,#111) 82%,transparent);background:transparent;color:var(--artist-ink,#111);font-size:24px}.artist-arrow:hover{border-color:var(--artist-ink,#111);background:var(--artist-ink,#111);color:var(--artist-bg,#cfff2e)}.artist-reel{height:620px;border-radius:0;background:transparent}.artist-slide{width:min(540px,76%);aspect-ratio:1.62;border:0;border-radius:14px;box-shadow:0 24px 60px rgba(0,0,0,.2)}.artist-slide[data-position="active"]{transform:translate(-50%,-50%) scale(1)}.artist-slide[data-position="previous"]{transform:translate(-50%,-132%) scale(.78);opacity:.35;filter:blur(14px) saturate(.7)}.artist-slide[data-position="next"]{transform:translate(-50%,32%) scale(.78);opacity:.35;filter:blur(14px) saturate(.7)}.artist-slide[data-position="hidden"]{transform:translate(-50%,100%) scale(.62);opacity:0;filter:blur(18px)}
+    @media(max-width:900px){.artist-showcase{margin:12px;border-radius:24px}.artist-showcase-inner{width:min(100% - 40px,640px);grid-template-columns:1fr;gap:16px;text-align:left}.artist-current-name{font-size:clamp(66px,18vw,120px)}.artist-showcase-counter{margin-top:16px}.artist-controls{margin-top:20px}.artist-reel{height:470px}.artist-slide{width:min(500px,88%)}}
+    @media(max-width:420px){.artist-showcase-inner{width:calc(100% - 32px)}.artist-showcase{min-height:calc(100svh - 24px);padding-top:24px}.artist-reel{height:390px}.artist-slide{width:92%}}
+    /* Keep the artist slider in the site's dark visual system. */
+    .artist-showcase{margin:0;min-height:100svh;padding:160px 0 80px;border-radius:0;background:transparent;color:var(--strong);border-bottom:1px solid var(--border)}
+    .artist-showcase-inner{min-height:calc(100svh - 240px)}
+    .artist-showcase-inner{align-items:center}
+    .artist-showcase-copy{position:relative;z-index:4;align-self:center;height:auto;justify-content:flex-start;align-items:flex-start;text-align:left}
+    .artist-current-name{max-width:560px;font:700 clamp(36px,5vw,56px)/1.05 Syne,sans-serif;letter-spacing:-.04em;text-align:left;text-transform:uppercase;white-space:normal;color:var(--strong);transition:opacity 650ms cubic-bezier(.16,1,.3,1),transform 650ms cubic-bezier(.16,1,.3,1)}
+    .artist-current-name span{display:block}
+    .artist-showcase-counter{color:var(--muted);font-size:16px}
+    .artist-arrow{border-color:var(--border-strong);background:transparent;color:var(--strong)}
+    .artist-arrow:hover{border-color:var(--accent);background:var(--accent);color:var(--bg)}
+    .artist-portfolio-copy{max-width:560px;opacity:0;visibility:hidden;pointer-events:none;transform:translateY(24px);transition:opacity 700ms cubic-bezier(.16,1,.3,1),transform 700ms cubic-bezier(.16,1,.3,1),visibility 0s linear 700ms}
+    .artist-portfolio-copy h1{font-size:clamp(36px,5vw,56px);line-height:1.05;letter-spacing:-.04em}
+    .artist-portfolio-copy h1 [data-portfolio-word]{display:inline-block;color:var(--accent)}
+    .artist-portfolio-copy h1 [data-portfolio-word].is-word-entering{animation:portfolio-word-rise 800ms cubic-bezier(.16,1,.3,1) both}
+    @keyframes portfolio-word-rise{from{opacity:0;transform:translateY(100%)}to{opacity:1;transform:translateY(0)}}
+    .artist-portfolio-copy p{max-width:560px;margin-bottom:var(--s8)}
+    .artist-reel{align-self:center;height:660px;min-height:0;max-height:none;mask-image:linear-gradient(to bottom,transparent 0%,#000 14%,#000 86%,transparent 100%);-webkit-mask-image:linear-gradient(to bottom,transparent 0%,#000 14%,#000 86%,transparent 100%)}
+    .artist-slide{width:min(360px,68%);aspect-ratio:3/4;border:1px solid rgba(255,255,255,.16);border-radius:20px;box-shadow:0 28px 90px rgba(0,0,0,.28)}
+    .artist-slide img{object-fit:cover;object-position:center 24%}
+    .artist-slide[data-position="active"]{box-shadow:0 32px 100px rgba(0,0,0,.72),0 0 0 1px rgba(255,255,255,.26)}
+    .artist-slide[data-position="previous"]{transform:translate(-50%,-122%) scale(.7);opacity:.38;filter:blur(12px) saturate(.72)}
+    .artist-slide[data-position="next"]{transform:translate(-50%,22%) scale(.7);opacity:.38;filter:blur(12px) saturate(.72)}
+    .artist-slide[data-position="hidden"]{transform:translate(-50%,100%) scale(.58);opacity:0;filter:blur(18px)}
+    .artist-showcase.is-portfolio .artist-showcase-copy{justify-content:center}
+    .artist-showcase.is-portfolio .artist-current-name{opacity:0;transform:translateY(-24px);pointer-events:none}
+    .artist-showcase.is-portfolio .artist-showcase-counter{opacity:0;visibility:hidden;transform:translateY(-12px);pointer-events:none}
+    .artist-showcase.is-portfolio .artist-current-name,.artist-showcase.is-portfolio .artist-showcase-counter,.artist-showcase.is-portfolio .artist-controls{display:none}
+    .artist-showcase.is-portfolio .artist-portfolio-copy{opacity:1;visibility:visible;pointer-events:auto;transform:translateY(0);transition-delay:120ms,120ms,0s}
+    .artist-showcase.is-portfolio .artist-portfolio-copy{text-align:left;align-self:stretch}
+    .artist-showcase.is-portfolio .artist-controls{opacity:0;visibility:hidden;pointer-events:none;transform:translateY(12px)}
+    .artist-controls{transition:opacity 450ms ease,transform 450ms ease,visibility 0s linear 450ms}
+    body:not(.is-page-unlocked) main>section:not(#artists),body:not(.is-page-unlocked) footer{opacity:0;visibility:hidden;pointer-events:none;transform:translateY(32px)}
+    body.is-page-unlocked main>section:not(#artists),body.is-page-unlocked footer{opacity:1;visibility:visible;pointer-events:auto;transform:translateY(0);transition:opacity 900ms cubic-bezier(.16,1,.3,1),transform 900ms cubic-bezier(.16,1,.3,1),visibility 0s linear 0s}
+    body:not(.features-unlocked) #get-started,body:not(.features-unlocked) footer{opacity:0;visibility:hidden;pointer-events:none;transform:translateY(32px)}
+    body.features-unlocked #get-started,body.features-unlocked footer{opacity:1;visibility:visible;pointer-events:auto;transform:translateY(0);transition:opacity 900ms cubic-bezier(.16,1,.3,1),transform 900ms cubic-bezier(.16,1,.3,1),visibility 0s linear 0s}
+    @media(max-width:900px){.artist-showcase{margin:0;border-radius:0;padding:140px 0 64px}.artist-showcase-inner{min-height:0}.artist-showcase-copy{height:auto}.artist-reel{height:520px;min-height:520px}.artist-current-name{font-size:clamp(36px,10vw,56px)}}
+    @media(max-width:900px){.artist-reel{height:520px}.artist-slide{width:min(330px,78%)}}
+  </style>
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
+</head>
+<body class="is-page-unlocked">
+  <header>
+    <nav class="nav-pill" aria-label="Primary navigation">
+      <a class="nav-brand" href="#top" aria-label="Raga Echoes Artist Media Kits home"><img class="nav-logo" src="assets/images/raga-echoes-logo.webp" alt="Raga Echoes"><span class="nav-divider"></span><span class="nav-copy"><span class="nav-label">Artist Media Kits</span></span></a>
+      <a class="btn header-action" href="#get-started">Get your media kit</a>
+    </nav>
+  </header>
+
+  <main id="top">
+    <section class="artist-showcase is-portfolio" id="artists">
+      <div class="container artist-showcase-inner">
+        <div class="artist-showcase-copy">
+          <div class="artist-current-name" aria-live="polite">Rishabh Choudhary</div>
+          <div class="artist-showcase-counter" aria-live="polite">1 / 3</div>
+          <div class="artist-portfolio-copy" aria-live="polite">
+            <span class="badge">Coming soon</span>
+            <h1>Your Digital Media Kit to present your <span data-portfolio-word>Music</span></h1>
+            <p class="muted">Personalised digital media kits that bring together an artist's biography, music, videos, performances, press, photographs and professional resources in one easy-to-share webpage.</p>
+            <a class="btn" href="#get-started">Get your media kit</a>
+          </div>
+          <div class="artist-controls">
+            <button class="artist-arrow" type="button" data-artist-direction="-1" aria-label="Previous artist">↑</button>
+            <button class="artist-arrow" type="button" data-artist-direction="1" aria-label="Next artist">↓</button>
+          </div>
+        </div>
+        <div class="artist-reel" tabindex="0" role="region" aria-roledescription="carousel" aria-label="Featured artists">
+          <div class="artist-slide" data-artist="0" data-position="active"><img src="assets/images/red-carpet-portrait.webp" alt="Rishabh Choudhary"></div>
+          <div class="artist-slide" data-artist="1" data-position="next"><img src="assets/images/ananya-sharma-hero.webp" alt="Ananya Sharma"></div>
+          <div class="artist-slide" data-artist="2" data-position="hidden"><img src="assets/images/blue-stage-sitar-performance.webp" alt="Naveen Gupta"></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="surface" id="about">
+      <div class="container two-col">
+        <div><h2>Built from our experience working with artists</h2></div>
+        <div class="why-copy-list">
+          <div><h3>Deep industry experience</h3><p>We’ve collaborated with over 50 diverse artists through our live productions, giving us firsthand insight into their daily challenges.</p></div>
+          <div><h3>Identifying the bottleneck</h3><p>We saw how much time artists waste repeatedly gathering bios, high-res photos, and videos for festivals, venues, and collaborations.</p></div>
+          <div><h3>Protecting creative time</h3><p>We believe artists should be able to focus entirely on their craft, not on repeatedly assembling the same promotional assets.</p></div>
+          <div><h3>Delivering a streamlined solution</h3><p>Raga Echoes Artist Media Kits simplify outreach by centralizing all your essential professional resources into one easily accessible place.</p></div>
+        </div>
+      </div>
+    </section>
+
+    <section id="features">
+      <div class="container">
+        <div class="features-intro"><h2>What's included in your<br>artist media kit?</h2></div>
+        <div class="feature-layout">
+          <div class="feature-list" role="tablist" aria-label="Artist media kit features">
+            <button class="feature-item is-active" type="button" role="tab" aria-selected="true" data-feature="0"><span class="feature-number">01</span><span><strong>Artist Profile</strong><small>A professional biography, artistic background, specialisation and career highlights.</small></span><span class="feature-chevron" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="m8.25 4.5 7.5 7.5-7.5 7.5" /></svg></span></button>
+            <button class="feature-item" type="button" role="tab" aria-selected="false" data-feature="1"><span class="feature-number">02</span><span><strong>Featured Links</strong><small>Direct access to streaming platforms, social media, websites, ticketing pages and other important destinations.</small></span><span class="feature-chevron" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="m8.25 4.5 7.5 7.5-7.5 7.5" /></svg></span></button>
+            <button class="feature-item" type="button" role="tab" aria-selected="false" data-feature="2"><span class="feature-number">03</span><span><strong>Music &amp; Video</strong><small>Featured recordings, albums, live performances, interviews and other audiovisual work.</small></span><span class="feature-chevron" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="m8.25 4.5 7.5 7.5-7.5 7.5" /></svg></span></button>
+            <button class="feature-item" type="button" role="tab" aria-selected="false" data-feature="3"><span class="feature-number">04</span><span><strong>Performances &amp; Recognition</strong><small>Performance formats, selected venues, festivals, collaborations, reviews and press coverage.</small></span><span class="feature-chevron" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="m8.25 4.5 7.5 7.5-7.5 7.5" /></svg></span></button>
+            <button class="feature-item" type="button" role="tab" aria-selected="false" data-feature="4"><span class="feature-number">05</span><span><strong>Announcements &amp; Merchandise</strong><small>Space to promote upcoming performances, new releases, merchandise and other offerings.</small></span><span class="feature-chevron" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="m8.25 4.5 7.5 7.5-7.5 7.5" /></svg></span></button>
+            <button class="feature-item" type="button" role="tab" aria-selected="false" data-feature="5"><span class="feature-number">06</span><span><strong>Photography &amp; Downloads</strong><small>Professional photographs, downloadable biographies, press materials and technical documents.</small></span><span class="feature-chevron" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="m8.25 4.5 7.5 7.5-7.5 7.5" /></svg></span></button>
+          </div>
+          <div class="feature-visual" aria-live="polite">
+            <div class="iphone-mockup"><div class="feature-preview-frame"><iframe src="ananya-media-kit-preview.html#hero" title="Artist media kit preview"></iframe></div></div>
+          </div>
+        </div>
+        <p class="features-note">Add custom sections like<br>Contact us | Performance packages | Press kit | Boilerplate | Tickets to upcoming events | and much more</p>
+      </div>
+    </section>
+
+    <section class="surface" id="get-started">
+      <div class="container cta-panel">
+        <div class="cta-layout">
+          <div>
+            <h2>Raga Echoes<br>Artist Media Kits</h2>
+            <a class="btn cta-action" href="mailto:hello@ragaechoes.com">Get your media kit</a>
+          </div>
+          <div class="cta-copy">
+            <p><strong>Interested in having your own artist media kit?</strong></p>
+            <p class="muted">We're preparing to launch Raga Echoes Artist Media Kits and inviting artists across disciplines and musical traditions to get in touch. If you'd like a digital portfolio that presents your work professionally and makes your information easier to share, we'd love to hear from you.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer"><div class="container footer-row"><img class="footer-brand-logo" src="assets/images/raga-echoes-logo.webp" alt="Raga Echoes"><p>© 2026 Raga Echoes. All rights reserved.</p><a href="#top" aria-label="Back to top">Back to Top <span aria-hidden="true">↑</span></a></div></footer>
+  <script>
+    (() => {
+      const items = [...document.querySelectorAll('.feature-item')];
+      if (!items.length) return;
+      const preview = document.querySelector('.feature-preview-frame iframe');
+      const previewBase = 'ananya-media-kit-preview.html';
+      const previewSections = ['hero', 'story', 'videos', 'formats', 'press', 'contact'];
+      let active = 0;
+      let timer;
+      let hovering = false;
+      let featureStarted = false;
+      let featureReleased = false;
+      const featureSection = document.querySelector('#features');
+      const featureNote = document.querySelector('.features-note');
+      const movePreview = index => {
+        if (!preview) return;
+        preview.src = `${previewBase}#${previewSections[index]}`;
+      };
+      const activate = index => {
+        active = index;
+        items.forEach((item, itemIndex) => {
+          item.classList.toggle('is-active', itemIndex === 0 && active === 0);
+          item.classList.toggle('is-auto-active', itemIndex === active && active !== 0);
+          item.setAttribute('aria-selected', String(itemIndex === active));
+        });
+        featureNote?.classList.toggle('is-visible', active === items.length - 1);
+        movePreview(active);
+      };
+      const schedule = () => {
+        window.clearTimeout(timer);
+        timer = window.setTimeout(() => {
+          if (window.__universalScrollMode) return;
+          if (!hovering) activate((active + 1) % items.length);
+          schedule();
+        }, 2000);
+      };
+      items.forEach(item => {
+        item.addEventListener('click', () => {
+          activate(Number(item.dataset.feature) || 0);
+          schedule();
+        });
+        item.addEventListener('mouseenter', () => {
+          hovering = true;
+          window.clearTimeout(timer);
+          items.forEach(entry => entry.classList.remove('is-auto-active'));
+        });
+        item.addEventListener('mouseleave', () => {
+          hovering = false;
+          schedule();
+        });
+      });
+      window.addEventListener('scroll', () => {
+        if (!featureSection || featureStarted) return;
+        const bounds = featureSection.getBoundingClientRect();
+        if (bounds.top <= window.innerHeight * .4 && bounds.bottom > 0) {
+          featureStarted = true;
+          activate(0);
+        }
+      }, { passive: true });
+      window.addEventListener('wheel', event => {
+        if (!featureSection || featureReleased) return;
+        const bounds = featureSection.getBoundingClientRect();
+        if (bounds.top > window.innerHeight * .4 || bounds.bottom <= 0) return;
+        if (event.deltaY > 0 && active < items.length - 1) {
+          event.preventDefault();
+          activate(active + 1);
+          schedule();
+          return;
+        }
+        if (event.deltaY < 0 && active > 0) {
+          event.preventDefault();
+          activate(active - 1);
+          schedule();
+          return;
+        }
+        if (event.deltaY > 0 && active === items.length - 1) {
+          featureReleased = true;
+          document.body.classList.add('features-unlocked');
+        }
+      }, { passive: false });
+      activate(0);
+      schedule();
+    })();
+    (() => {
+      const reel = document.querySelector('.artist-reel');
+      const slides = [...document.querySelectorAll('.artist-slide')];
+      const name = document.querySelector('.artist-current-name');
+      const counter = document.querySelector('.artist-showcase-counter');
+      const showcase = document.querySelector('.artist-showcase');
+      const portfolio = document.querySelector('.artist-portfolio-copy');
+      const portfolioWord = document.querySelector('[data-portfolio-word]');
+      const gatedContent = [...document.querySelectorAll('main > section:not(#artists), footer')];
+      const buttons = [...document.querySelectorAll('[data-artist-direction]')];
+      if (!reel || !slides.length || !name || !counter) return;
+      const names = ['Rishabh Choudhary', 'Ananya Sharma', 'Naveen Gupta'];
+      let active = 0;
+      let portfolioRevealed = true;
+      let locked = false;
+      let autoTimer;
+      let heroScrollLocked = true;
+      let portfolioWordIndex = 0;
+      const portfolioWords = ['Music', 'Press Kit', 'Biography', 'work'];
+      const render = () => {
+        slides.forEach((slide, index) => {
+          let diff = (index - active + slides.length) % slides.length;
+          if (diff > slides.length / 2) diff -= slides.length;
+          slide.dataset.position = diff === 0 ? 'active' : diff === -1 ? 'previous' : diff === 1 ? 'next' : 'hidden';
+        });
+        const nameParts = names[active].split(' ');
+        name.innerHTML = `<span>${nameParts[0]}</span><span>${nameParts.slice(1).join(' ')}</span>`;
+        if (portfolioWord) {
+          const nextWord = portfolioWords[portfolioWordIndex];
+          if (portfolioWord.textContent !== nextWord) {
+            portfolioWord.textContent = nextWord;
+            portfolioWord.classList.remove('is-word-entering');
+            void portfolioWord.offsetWidth;
+            portfolioWord.classList.add('is-word-entering');
+          }
+        }
+        counter.textContent = `${active + 1} / ${slides.length}`;
+        if (showcase) showcase.classList.toggle('is-portfolio', portfolioRevealed);
+        document.body.classList.toggle('is-page-unlocked', portfolioRevealed);
+        gatedContent.forEach(element => { element.inert = !portfolioRevealed; });
+      };
+      const move = direction => {
+        if (locked) return;
+        locked = true;
+        if (!portfolioRevealed && direction > 0 && active === slides.length - 1) {
+          portfolioRevealed = true;
+        } else if (!portfolioRevealed && direction < 0 && active === 0) {
+          active = 0;
+        } else {
+          active = (active + direction + slides.length) % slides.length;
+        }
+        render();
+        window.clearTimeout(autoTimer);
+        window.setTimeout(() => { locked = false; }, 820);
+        scheduleAuto();
+      };
+      buttons.forEach(button => button.addEventListener('click', () => move(Number(button.dataset.artistDirection))));
+      const scheduleAuto = () => {
+        window.clearTimeout(autoTimer);
+        if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+        autoTimer = window.setTimeout(() => {
+          if (window.__universalScrollMode) return;
+          if (portfolioRevealed) active = (active + 1) % slides.length;
+          else if (active < slides.length - 1) active += 1;
+          else portfolioRevealed = true;
+          render();
+          scheduleAuto();
+        }, 5000);
+      };
+      window.addEventListener('wheel', event => {
+        if (event.deltaY === 0) return;
+        if (heroScrollLocked && event.deltaY > 0) {
+          if (active < slides.length - 1) {
+            portfolioWordIndex = Math.min(portfolioWordIndex + 1, portfolioWords.length - 1);
+            event.preventDefault();
+            move(1);
+            return;
+          }
+          portfolioWordIndex = portfolioWords.length - 1;
+          render();
+          heroScrollLocked = false;
+        }
+        if (heroScrollLocked && event.deltaY < 0 && active > 0) {
+          event.preventDefault();
+          move(-1);
+          return;
+        }
+        if (!heroScrollLocked) return;
+        move(event.deltaY > 0 ? 1 : -1);
+      }, { passive: false });
+      reel.addEventListener('keydown', event => {
+        if (event.key === 'ArrowDown') { event.preventDefault(); move(1); }
+        if (event.key === 'ArrowUp') { event.preventDefault(); move(-1); }
+      });
+      render();
+      scheduleAuto();
+    })();
+    (() => {
+      const body = document.body;
+      const sections = [
+        document.querySelector('#artists'),
+        document.querySelector('#about'),
+        document.querySelector('#features'),
+        document.querySelector('#get-started')
+      ].filter(Boolean);
+      const artistNext = document.querySelector('[data-artist-direction="1"]');
+      const artistPrevious = document.querySelector('[data-artist-direction="-1"]');
+      const featureItems = [...document.querySelectorAll('.feature-item')];
+      const whyItems = [...document.querySelectorAll('.why-copy-list > div')];
+      const portfolioWord = document.querySelector('[data-portfolio-word]');
+      const heroWords = ['Music', 'Press Kit', 'Biography', 'work'];
+      if (!sections.length) return;
+
+      let sectionIndex = 0;
+      let sectionStep = 0;
+      let coolingDown = false;
+      let complete = false;
+      let carouselTimer;
+      window.__universalScrollMode = true;
+      body.classList.add('universal-scroll-stage');
+
+      const showSection = index => {
+        sections.forEach((section, sectionIndexValue) => {
+          section.classList.toggle('is-stage-visible', sectionIndexValue === index);
+        });
+        const activeSection = sections[index];
+        if (activeSection) {
+          activeSection.scrollIntoView({behavior:index === 0 ? 'auto' : 'smooth', block:'start'});
+        }
+        if (window.gsap && activeSection) {
+          const activeContent = activeSection.querySelector('.container');
+          if (activeContent) window.gsap.fromTo(activeContent, {autoAlpha:.55, y:24}, {autoAlpha:1, y:0, duration:.7, ease:'power3.out', overwrite:true});
+        }
+      };
+      const highlightWhy = index => {
+        whyItems.forEach((item, itemIndex) => item.classList.toggle('is-stage-active', itemIndex === index));
+        const heading = whyItems[index]?.querySelector('h3');
+        if (window.gsap && heading) {
+          window.gsap.fromTo(heading, {autoAlpha:.35, y:12}, {autoAlpha:1, y:0, duration:.45, ease:'power2.out', overwrite:true});
+        }
+      };
+      const highlightFeature = index => {
+        featureItems.forEach((item, itemIndex) => {
+          item.classList.toggle('is-stage-active', itemIndex === index);
+          item.classList.toggle('is-auto-active', itemIndex === index && index !== 0);
+          item.setAttribute('aria-selected', String(itemIndex === index));
+        });
+        featureItems[index]?.click();
+        if (window.gsap && featureItems[index]) {
+          window.gsap.fromTo(featureItems[index], {x:-14}, {x:0, duration:.45, ease:'power2.out', overwrite:true});
+        }
+      };
+      const updateHeroWord = index => {
+        if (!portfolioWord) return;
+        portfolioWord.textContent = heroWords[index];
+        portfolioWord.classList.remove('is-word-entering');
+        void portfolioWord.offsetWidth;
+        portfolioWord.classList.add('is-word-entering');
+      };
+      const releasePage = () => {
+        complete = true;
+        body.classList.add('features-unlocked');
+        body.classList.remove('universal-scroll-stage');
+        window.__universalScrollMode = false;
+        whyItems.forEach(item => item.classList.remove('is-stage-active'));
+        sections.forEach(section => section.classList.remove('is-stage-visible'));
+        body.style.overflow = '';
+        window.clearTimeout(carouselTimer);
+        carouselTimer = window.setTimeout(() => artistNext?.click(), 5000);
+        document.querySelector('#get-started')?.scrollIntoView({behavior:'smooth', block:'start'});
+      };
+      const advance = direction => {
+        if (complete || coolingDown) return;
+        coolingDown = true;
+        window.setTimeout(() => { coolingDown = false; }, 400);
+
+        if (direction < 0) {
+          if (sectionIndex === 0) {
+            if (sectionStep > 0) { sectionStep -= 1; updateHeroWord(sectionStep); artistPrevious?.click(); }
+            return;
+          }
+          if (sectionIndex === 1) {
+            if (sectionStep > 0) { sectionStep -= 1; highlightWhy(sectionStep); }
+            else { sectionIndex = 0; sectionStep = 3; showSection(0); }
+            return;
+          }
+          if (sectionIndex === 2) {
+            if (sectionStep > 0) { sectionStep -= 1; highlightFeature(sectionStep); }
+            else { sectionIndex = 1; sectionStep = whyItems.length - 1; showSection(1); highlightWhy(sectionStep); }
+            return;
+          }
+          sectionIndex = 2;
+          sectionStep = featureItems.length - 1;
+          showSection(2);
+          highlightFeature(sectionStep);
+          return;
+        }
+
+        if (sectionIndex === 0) {
+          if (sectionStep < 3) {
+            sectionStep += 1;
+            updateHeroWord(sectionStep);
+            artistNext?.click();
+            return;
+          }
+          sectionIndex = 1;
+          sectionStep = 0;
+          showSection(sectionIndex);
+          highlightWhy(0);
+          return;
+        }
+        if (sectionIndex === 1) {
+          if (sectionStep < whyItems.length - 1) {
+            sectionStep += 1;
+            highlightWhy(sectionStep);
+          } else {
+            sectionIndex = 2;
+            sectionStep = 0;
+            showSection(sectionIndex);
+            highlightFeature(0);
+          }
+          return;
+        }
+        if (sectionIndex === 2) {
+          if (sectionStep < featureItems.length - 1) {
+            sectionStep += 1;
+            highlightFeature(sectionStep);
+          } else {
+            sectionIndex = 3;
+            sectionStep = 0;
+            showSection(sectionIndex);
+          }
+          return;
+        }
+        releasePage();
+      };
+
+      showSection(0);
+      highlightWhy(0);
+      highlightFeature(0);
+
+      document.addEventListener('wheel', event => {
+        if (complete || event.deltaY === 0) return;
+        event.preventDefault();
+        event.stopPropagation();
+        advance(event.deltaY > 0 ? 1 : -1);
+      }, {capture:true, passive:false});
+      document.addEventListener('keydown', event => {
+        if (complete || !['ArrowDown','ArrowUp','PageDown','PageUp',' '].includes(event.key)) return;
+        event.preventDefault();
+        advance(event.key === 'ArrowUp' || event.key === 'PageUp' ? -1 : 1);
+      });
+    })();
+  </script>
+</body>
+</html>
