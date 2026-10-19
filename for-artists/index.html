@@ -390,7 +390,9 @@
         });
         const activeSection = sections[index];
         if (activeSection) {
-          activeSection.scrollIntoView({behavior:index === 0 ? 'auto' : 'smooth', block:'start'});
+          const headerOffset = 104;
+          const targetY = Math.max(0, activeSection.getBoundingClientRect().top + window.scrollY - headerOffset);
+          window.scrollTo({top:targetY, left:0, behavior:index === 0 ? 'auto' : 'smooth'});
         }
         if (window.gsap && activeSection) {
           const activeContent = activeSection.querySelector('.container');
